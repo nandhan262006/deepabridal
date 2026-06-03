@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
-const navLinks = ["Home","Services","Gallery","About","Testimonials","Contact"];
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Bridal Packages", href: "#bridal-services" },
+  { name: "Gallery", href: "#gallery" },
+  
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,51 +33,69 @@ export default function Navbar() {
   return (
     <motion.nav initial={{y:-80}} animate={{y:0}} transition={{duration:0.8,ease:"easeOut"}}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={scrolled ? scrolledStyle : {}}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded border border-yellow-600/55 flex items-center justify-center">
-            <span className="font-script text-2xl gold-text leading-none">d</span>
-          </div>
-          <div>
-            <p className="font-display text-sm font-semibold tracking-[0.2em] gold-text uppercase">Deepa Bridal</p>
-            <p className="font-sans text-[9px] tracking-[0.35em] text-yellow-600/55 uppercase">Studio</p>
-          </div>
-        </div>
-        <ul className="hidden lg:flex items-center gap-8">
+      style={scrolled ? scrolledStyle : {}}
+      aria-label="Main navigation">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <a href="#home" className="flex items-center gap-3" aria-label="Deepa Bridal Studio - Home">
+          <img src="/LOGO.png" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" className="h-10 sm:h-12 md:h-14 w-auto" loading="eager" />
+        </a>
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-8" role="list">
           {navLinks.map(link=>(
-            <li key={link}>
-              <a href={`#${link.toLowerCase()}`}
-                className="font-sans text-xs tracking-[0.2em] uppercase text-yellow-400/65 hover:text-yellow-400 transition-colors duration-300 relative group">
-                {link}
+            <li key={link.name}>
+              <a href={link.href}
+                className="font-sans text-xs tracking-[0.2em] uppercase text-yellow-400/80 hover:text-yellow-400 transition-colors duration-300 relative group">
+                {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-yellow-600 group-hover:w-full transition-all duration-300" />
               </a>
             </li>
           ))}
         </ul>
-        <a href="tel:+917993393339"
-          className="hidden lg:flex items-center gap-2 px-5 py-2 border border-yellow-700/50 hover:border-yellow-500 hover:bg-yellow-500/8 transition-all duration-300 group">
-          <Phone size={12} className="text-yellow-500 group-hover:animate-pulse"/>
-          <span className="font-sans text-xs tracking-[0.15em] gold-text">Book Now</span>
-        </a>
-        <button className="lg:hidden text-yellow-500" onClick={()=>setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={22}/> : <Menu size={22}/>}
+        <div className="hidden lg:flex items-center gap-2">
+          <a href="https://wa.me/917993393339?text=Hi%20Deepa%20Bridal%20Studio!%20I'd%20like%20to%20book%20a%20consultation."
+            target="_blank" rel="noopener noreferrer"
+            className="touch-target flex items-center gap-2 px-4 py-2 border border-green-700/50 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group"
+            aria-label="Book via WhatsApp">
+            <MessageCircle size={12} className="text-green-400 group-hover:animate-pulse"/>
+            <span className="font-sans text-xs tracking-[0.15em] text-green-300/90">WhatsApp</span>
+          </a>
+          <a href="tel:+917993393339"
+            className="touch-target flex items-center gap-2 px-4 py-2 border border-yellow-700/50 hover:border-yellow-500 hover:bg-yellow-500/8 transition-all duration-300 group"
+            aria-label="Call Deepa Bridal Studio at +91 79933 93339">
+            <Phone size={12} className="text-yellow-500 group-hover:animate-pulse"/>
+            <span className="font-sans text-xs tracking-[0.15em] gold-text">Call</span>
+          </a>
+        </div>
+        <button className="lg:hidden text-yellow-500 touch-target flex items-center justify-center" onClick={()=>setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}>
+          {menuOpen ? <X size={24}/> : <Menu size={24}/>}
         </button>
       </div>
       <AnimatePresence>
         {menuOpen && (
           <motion.div initial={{opacity:0,height:0}} animate={{opacity:1,height:"auto"}} exit={{opacity:0,height:0}}
             className="lg:hidden border-t border-yellow-900/30"
-            style={{backgroundColor:'rgba(6,15,9,0.98)',backdropFilter:'blur(12px)'}}>
-            <div className="px-6 py-6 flex flex-col gap-5">
+            style={{backgroundColor:'rgba(6,15,9,0.98)',backdropFilter:'blur(12px)'}}
+            role="navigation" aria-label="Mobile navigation">
+            <div className="px-4 sm:px-6 py-6 flex flex-col gap-5">
               {navLinks.map(link=>(
-                <a key={link} href={`#${link.toLowerCase()}`} onClick={()=>setMenuOpen(false)}
-                  className="font-sans text-sm tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link}</a>
+                <a key={link.name} href={link.href} onClick={()=>setMenuOpen(false)}
+                  className="touch-target flex items-center font-sans text-sm tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link.name}</a>
               ))}
-              <a href="tel:+917993393339" className="flex items-center gap-2 mt-2 px-4 py-3 border border-yellow-700/40 justify-center">
-                <Phone size={12} className="text-yellow-500"/>
-                <span className="font-sans text-xs tracking-[0.2em] gold-text">799 339 3339</span>
-              </a>
+              <div className="flex gap-2 mt-2">
+                <a href="https://wa.me/917993393339?text=Hi%20Deepa%20Bridal%20Studio!%20I'd%20like%20to%20book%20a%20consultation."
+                  target="_blank" rel="noopener noreferrer"
+                  className="touch-target flex items-center gap-2 flex-1 px-4 py-3 border border-green-700/40 justify-center"
+                  aria-label="Book via WhatsApp">
+                  <MessageCircle size={14} className="text-green-400"/>
+                  <span className="font-sans text-xs tracking-[0.2em] text-green-300/90">WhatsApp</span>
+                </a>
+                <a href="tel:+917993393339" className="touch-target flex items-center gap-2 flex-1 px-4 py-3 border border-yellow-700/40 justify-center"
+                  aria-label="Call Deepa Bridal Studio at +91 79933 93339">
+                  <Phone size={14} className="text-yellow-500"/>
+                  <span className="font-sans text-xs tracking-[0.2em] gold-text">Call Now</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
