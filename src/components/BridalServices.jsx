@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { Sparkles } from "lucide-react";
 
 const bridalPackages = [
-  { title: "Normal Bridal Makeup Nellore", 
+  { title: "Basic Bridal Makeup Nellore", 
     desc: "Classic bridal look with high-quality products. Perfect for intimate ceremonies and traditional functions at your wedding in Nellore.",
     features: ["Matte/Glossy Finish", "Long-Lasting Formula", "Bridal Trials Included", "Touch-up Kit"],
-    img: "/hero.webp" },
+    img: "/basica.jpeg" },
   { title: "HD Bridal Makeup Nellore",
     desc: "Flawless HD finish designed for high-definition photography. Airbrushed perfection for your big day. The best HD bridal makeup in Nellore.",
     features: ["HD Foundation & Setting", "Camera-Ready Finish", "Water-Resistant", "Complimentary Trial"],
