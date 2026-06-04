@@ -9,6 +9,7 @@ const instagramPosts = [
   { id: 3, img: "/insta3.webp", url: "https://www.instagram.com/reel/DP9nLKykmwg/", alt: "Bridal hairstyle and makeup at Deepa Bridal Studio Nellore" },
   { id: 4, img: "/insta4.webp", url: "https://www.instagram.com/reel/DWhCnjMkle4/", alt: "Luxury bridal makeup package by Deepa Bridal Studio in Magunta Layout Nellore" },
   { id: 5, img: "/insta5.webp", url: "https://www.instagram.com/reel/C8hYs9syPNj/", alt: "Professional bridal makeup artist Deepa Bridal Studio Nellore" },
+  { id: 6, img: "/ananyanagalla.jpeg", url: "https://www.instagram.com/", alt: "Actress Ananya Nagalla at Deepa Bridal Studio Nellore" },
 ];
 
 function InstagramPost({ post, index }) {
@@ -39,6 +40,13 @@ function InstagramPost({ post, index }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-4">
           <p className="font-display text-base sm:text-lg md:text-xl font-semibold gold-text leading-tight">
             Famous Playback Singer Mangli
+          </p>
+        </div>
+      )}
+      {post.id === 6 && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-4">
+          <p className="font-display text-base sm:text-lg md:text-xl font-semibold gold-text leading-tight">
+            Actress Ananya Nagalla
           </p>
         </div>
       )}
