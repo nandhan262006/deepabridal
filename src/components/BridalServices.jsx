@@ -11,7 +11,7 @@ const bridalPackages = [
   { title: "HD Bridal Makeup Nellore",
     desc: "Flawless HD finish designed for high-definition photography. Airbrushed perfection for your big day. The best HD bridal makeup in Nellore.",
     features: ["HD Foundation & Setting", "Camera-Ready Finish", "Water-Resistant", "Complimentary Trial"],
-    img: "/hd1.webp" },
+    img: "/hd6.jpeg" },
   { title: "Airbrush Makeup Nellore",
     desc: "Ultra-lightweight airbrush application for a second-skin finish. Transfer-proof, sweat-proof, and weightless. Premium airbrush makeup artist in Nellore.",
     features: ["4K Resolution Finish", "Transfer-Proof Formula", "Buildable Coverage", "Lasts 16+ Hours"],
