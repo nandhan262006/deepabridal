@@ -1,58 +1,30 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { useRef } from "react";
+import { Sparkles } from "lucide-react";
 
 const bridalPackages = [
   { title: "Normal Bridal Makeup Nellore", 
     desc: "Classic bridal look with high-quality products. Perfect for intimate ceremonies and traditional functions at your wedding in Nellore.",
     features: ["Matte/Glossy Finish", "Long-Lasting Formula", "Bridal Trials Included", "Touch-up Kit"],
-    images: ["/hero.webp","/74560cc8-0160-411c-aa5e-0b18b9388df4.webp","/hero.webp","/74560cc8-0160-411c-aa5e-0b18b9388df4.webp"] },
+    img: "/hero.webp" },
   { title: "HD Bridal Makeup Nellore",
     desc: "Flawless HD finish designed for high-definition photography. Airbrushed perfection for your big day. The best HD bridal makeup in Nellore.",
     features: ["HD Foundation & Setting", "Camera-Ready Finish", "Water-Resistant", "Complimentary Trial"],
-    images: ["/hd1.webp","/hd2.webp","/hd3.webp","/hd4.webp","/hd5.webp"] },
+    img: "/hd1.webp" },
   { title: "Airbrush Makeup Nellore",
     desc: "Ultra-lightweight airbrush application for a second-skin finish. Transfer-proof, sweat-proof, and weightless. Premium airbrush makeup artist in Nellore.",
     features: ["4K Resolution Finish", "Transfer-Proof Formula", "Buildable Coverage", "Lasts 16+ Hours"],
-    images: ["/airbrush1.webp","/airbrush2.webp","/airbrush3.webp","/airbrush4.webp","/airbrush5.webp"] },
+    img: "/airbrush1.webp" },
 ];
 
-const rotateMap = {
-  "/hd2.webp": "rotate-90",
-  "/hd3.webp": "rotate-90",
-};
-
-function PhotoSlider({ images, title }) {
-  const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent(c => (c === 0 ? images.length - 1 : c - 1));
-  const next = () => setCurrent(c => (c === images.length - 1 ? 0 : c + 1));
-  const rotClass = rotateMap[images[current]] || "";
+function BridalImage({ src, title }) {
   return (
     <div className="relative aspect-[1/1] overflow-hidden border border-yellow-800/30 mb-5"
       style={{backgroundColor:'#0a2016'}}>
-      <AnimatePresence mode="wait">
-        <motion.img key={current} src={images[current]} alt={`${title} - Bridal look ${current + 1} by Deepa Bridal Studio in Nellore`}
-          initial={{opacity:0,x:60}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-60}}
-          transition={{duration:0.35}}
-          className={`w-full h-full object-cover absolute inset-0 exif-correct ${rotClass}`} loading="lazy" />
-      </AnimatePresence>
+      <img src={src} alt={`${title} - Deepa Bridal Studio Nellore`}
+        className="w-full h-full object-cover absolute inset-0" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-t from-green-950/30 to-transparent pointer-events-none" />
-      <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
-        aria-label="Previous bridal makeup photo">
-        <ChevronLeft size={14} className="text-yellow-400" />
-      </button>
-      <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
-        aria-label="Next bridal makeup photo">
-        <ChevronRight size={14} className="text-yellow-400" />
-      </button>
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-        {images.map((_,i)=>(
-          <button key={i} onClick={()=>setCurrent(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i===current?'bg-yellow-500 w-4':'bg-yellow-700/50 hover:bg-yellow-600/60'}`}
-            aria-label={`View bridal look ${i + 1}`} />
-        ))}
-      </div>
     </div>
   );
 }
@@ -74,7 +46,7 @@ function BridalPackageCard({ pkg, index }) {
         <div className="absolute top-0 right-0 w-px h-7 bg-gradient-to-b from-yellow-600/50 to-transparent" />
         <div className="absolute top-0 right-0 h-px w-7 bg-gradient-to-l from-yellow-600/50 to-transparent" />
       </div>
-      <PhotoSlider images={pkg.images} title={pkg.title} />
+      <BridalImage src={pkg.img} title={pkg.title} />
       <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
         <div className="mb-3">
           <h3 className="font-display text-3xl gold-text">{pkg.title}</h3>
