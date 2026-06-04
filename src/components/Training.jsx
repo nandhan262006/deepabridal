@@ -47,7 +47,7 @@ export default function Training() {
             <div className="relative max-w-md mx-auto">
               <div className="absolute -inset-2 border border-yellow-700/20" />
               <div className="absolute -inset-4 border border-yellow-800/10" />
-              <div className="relative aspect-[4/3] overflow-hidden border border-yellow-800/30 group"
+              <div className="relative aspect-[3/4] overflow-hidden border border-yellow-800/30 group"
                 style={{backgroundColor:'#0a2016'}}>
                 <AnimatePresence mode="wait">
                   <motion.img key={current} src={trainingPhotos[current].src}
