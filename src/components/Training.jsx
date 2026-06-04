@@ -41,61 +41,42 @@ export default function Training() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <motion.div initial={{opacity:0,x:-50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8}}
-            className="relative">
-            <div className="relative max-w-md mx-auto">
-              <div className="absolute -inset-2 border border-yellow-700/20" />
-              <div className="absolute -inset-4 border border-yellow-800/10" />
-              <div className="relative aspect-[3/4] overflow-hidden border border-yellow-800/30 group"
-                style={{backgroundColor:'#0a2016'}}>
-                <AnimatePresence mode="wait">
-                  <motion.img key={current} src={trainingPhotos[current].src}
-                    alt={`Training photo ${current + 1} - Deepa Bridal Studio Nellore`}
-                    initial={{opacity:0,scale:1.1}} animate={{opacity:1,scale:1}} exit={{opacity:0}}
-                    transition={{duration:0.4}}
-                    className="w-full h-full object-cover absolute inset-0" loading="lazy" />
-                </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 right-0 p-3 m-2 z-10" style={{backgroundColor:'rgba(6,15,9,0.85)'}}>
-                  <p className="font-display text-base md:text-lg gold-text text-right leading-snug">{trainingPhotos[current].label}</p>
-                </div>
-                <button onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
-                  aria-label="Previous training photo">
-                  <ChevronLeft size={16} className="text-yellow-400" />
-                </button>
-                <button onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
-                  aria-label="Next training photo">
-                  <ChevronRight size={16} className="text-yellow-400" />
-                </button>
-              </div>
-              <div className="flex justify-center gap-2 mt-4">
-                {trainingPhotos.map((_, i) => (
-                  <button key={i} onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-yellow-500 w-5' : 'bg-yellow-700/50 hover:bg-yellow-600/60'}`}
-                    aria-label={`View training photo ${i + 1}`} />
-                ))}
-              </div>
+        <motion.div initial={{opacity:0,x:-50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8}}
+          className="relative max-w-md mx-auto">
+          <div className="absolute -inset-2 border border-yellow-700/20" />
+          <div className="absolute -inset-4 border border-yellow-800/10" />
+          <div className="relative aspect-[3/4] overflow-hidden border border-yellow-800/30 group"
+            style={{backgroundColor:'#0a2016'}}>
+            <AnimatePresence mode="wait">
+              <motion.img key={current} src={trainingPhotos[current].src}
+                alt={`Training photo ${current + 1} - Deepa Bridal Studio Nellore`}
+                initial={{opacity:0,scale:1.1}} animate={{opacity:1,scale:1}} exit={{opacity:0}}
+                transition={{duration:0.4}}
+                className="w-full h-full object-cover absolute inset-0" loading="lazy" />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 right-0 p-3 m-2 z-10" style={{backgroundColor:'rgba(6,15,9,0.85)'}}>
+              <p className="font-display text-base md:text-lg gold-text text-right leading-snug">{trainingPhotos[current].label}</p>
             </div>
-          </motion.div>
-
-          <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.2}}>
-            <p className="font-sans text-sm tracking-[0.4em] uppercase text-yellow-600/75 mb-4">Our Expertise</p>
-            <h3 className="font-display text-4xl md:text-5xl gold-text mb-4">Refined Under Expert Guidance</h3>
-            <div className="divider-gold mb-6 opacity-50" />
-            <div className="space-y-4 font-body text-lg text-yellow-100/85 leading-relaxed">
-              <p>At <strong className="gold-text">Deepa Bridal Studio</strong>, our craft has been shaped by rigorous training under seasoned industry professionals. Every technique — from airbrush application to intricate draping — is honed to perfection through years of mentorship and real-world experience.</p>
-              <p>We bring that same dedication to every bride who trusts us with her big day. Our training ensures you receive the highest standard of bridal artistry in <strong>Nellore</strong>.</p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Advanced Airbrush","HD Finishing","Bridal Styling","Skin Science"].map(tag => (
-                <span key={tag} className="px-4 py-1.5 border border-yellow-800/40 font-sans text-sm tracking-[0.18em] uppercase text-yellow-500/80">{tag}</span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+            <button onClick={prev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
+              aria-label="Previous training photo">
+              <ChevronLeft size={16} className="text-yellow-400" />
+            </button>
+            <button onClick={next}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
+              aria-label="Next training photo">
+              <ChevronRight size={16} className="text-yellow-400" />
+            </button>
+          </div>
+          <div className="flex justify-center gap-2 mt-4">
+            {trainingPhotos.map((_, i) => (
+              <button key={i} onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-yellow-500 w-5' : 'bg-yellow-700/50 hover:bg-yellow-600/60'}`}
+                aria-label={`View training photo ${i + 1}`} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
