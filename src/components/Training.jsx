@@ -57,7 +57,7 @@ export default function Training() {
                     className="w-full h-full object-cover absolute inset-0" loading="lazy" />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 right-0 p-4 z-10">
+                <div className="absolute bottom-0 right-0 p-3 m-2 z-10" style={{backgroundColor:'rgba(6,15,9,0.85)'}}>
                   <p className="font-display text-sm md:text-base gold-text text-right leading-snug">{trainingPhotos[current].label}</p>
                 </div>
                 <button onClick={prev}
