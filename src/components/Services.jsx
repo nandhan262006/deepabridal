@@ -4,14 +4,10 @@ import { useRef } from "react";
 import { Scissors, Sparkles, Star, Gem } from "lucide-react";
 
 const services = [
-  { icon: Scissors, title: "Hair Services", subtitle: "Style & Care",
-    desc: "Haircuts, styling, and advanced treatments." },
-  { icon: Star, title: "Skin Care Studio", subtitle: "Glow & Radiance",
-    desc: "Facials and targeted treatments for a brighter complexion." },
-  { icon: Sparkles, title: "Bridal Makeup", subtitle: "Artistry & Elegance",
-    desc: "HD-ready bridal makeup tailored to your style." },
-  { icon: Gem, title: "Nail Studio", subtitle: "Details & Design",
-    desc: "Bridal nail art, gel extensions, and custom designs." },
+  { icon: Scissors, title: "Hair Services", subtitle: "Style & Care" },
+  { icon: Star, title: "Skin Care Studio", subtitle: "Glow & Radiance" },
+  { icon: Sparkles, title: "Bridal Makeup", subtitle: "Artistry & Elegance" },
+  { icon: Gem, title: "Nail Studio", subtitle: "Details & Design" },
 ];
 
 function ServiceCard({ service, index }) {
@@ -32,8 +28,7 @@ function ServiceCard({ service, index }) {
           <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
         </div>
       </div>
-      <div className="divider-gold mb-2 opacity-25" />
-      <p className="font-body text-sm text-yellow-100/75">{service.desc}</p>
+
     </motion.div>
   );
 }
