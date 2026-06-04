@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Camera, ArrowRight } from "lucide-react";
 
 const previewPosts = [
@@ -45,11 +46,11 @@ export default function InstagramGallery() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <a href="/gallery"
+          <Link to="/gallery"
             className="inline-flex items-center gap-2 px-8 py-4 border border-yellow-700/50 text-yellow-400/80 hover:text-yellow-300 hover:border-yellow-500 transition-all duration-300 font-sans text-sm tracking-[0.25em] uppercase group">
             View My Gallery
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
