@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 const bridalPackages = [
@@ -25,12 +25,6 @@ const rotateMap = {
 
 function PhotoSlider({ images, title }) {
   const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(c => (c === images.length - 1 ? 0 : c + 1));
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [images.length]);
   const prev = () => setCurrent(c => (c === 0 ? images.length - 1 : c - 1));
   const next = () => setCurrent(c => (c === images.length - 1 ? 0 : c + 1));
   const rotClass = rotateMap[images[current]] || "";
