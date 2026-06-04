@@ -45,14 +45,9 @@ export default function Services() {
     <section id="services" className="deepa-bg-dark section-padding relative overflow-hidden"
       aria-label="Bridal makeup, hair styling, skin care and nail services in Nellore by Deepa Bridal Studio">
       <div className="relative z-10 max-w-6xl mx-auto">
-        <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">What We Offer</p>
-          <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Our Services in Nellore</h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />
-            <span className="font-script text-xl text-yellow-400/60">crafted with love</span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-700" />
-          </div>
+        <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-8">
+          <p className="font-sans text-[9px] tracking-[0.6em] uppercase text-yellow-600/75 mb-2">What We Offer</p>
+          <h2 className="font-display text-3xl md:text-4xl gold-text">Our Services</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {services.map((s,i)=><ServiceCard key={s.title} service={s} index={i}/>)}
