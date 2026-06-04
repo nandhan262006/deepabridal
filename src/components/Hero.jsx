@@ -64,7 +64,7 @@ export default function Hero() {
         <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:1,delay:1.2}}
           className="font-display hero-sub text-4xl sm:text-5xl md:text-6xl gold-text italic font-light leading-relaxed"
           style={{textShadow:'0 2px 12px rgba(0,0,0,0.6)'}}>
-          Signature by Deepa
+          Signature bridal artistry with Deepa
         </motion.p>
 
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8,delay:1.4}}
