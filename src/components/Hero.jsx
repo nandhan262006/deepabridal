@@ -3,7 +3,7 @@ import { ChevronDown, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="deepa-bg relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
+    <section id="home" className="deepa-bg relative min-h-[60vh] sm:min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore">
       <div className="deepa-vignette" />
 
