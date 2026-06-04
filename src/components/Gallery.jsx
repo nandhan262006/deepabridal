@@ -4,12 +4,12 @@ import { useInView } from "framer-motion";
 import { Camera } from "lucide-react";
 
 const instagramPosts = [
-  { id: 1, img: "/insta1.webp", url: "https://www.instagram.com/reel/DU45YpTEaG3/", alt: "Bridal makeup transformation by Deepa Bridal Studio in Nellore" },
-  { id: 2, img: "/insta2.webp", url: "https://www.instagram.com/reel/DOMaynXk6qa/", alt: "Wedding bridal look by best makeup artist in Nellore - Deepa Bridal Studio" },
   { id: 3, img: "/insta3.webp", url: "https://www.instagram.com/reel/DP9nLKykmwg/", alt: "Bridal hairstyle and makeup at Deepa Bridal Studio Nellore" },
-  { id: 4, img: "/insta4.webp", url: "https://www.instagram.com/reel/DWhCnjMkle4/", alt: "Luxury bridal makeup package by Deepa Bridal Studio in Magunta Layout Nellore" },
   { id: 5, img: "/insta5.webp", url: "https://www.instagram.com/reel/C8hYs9syPNj/", alt: "Professional bridal makeup artist Deepa Bridal Studio Nellore" },
   { id: 6, img: "/ananyanagalla.jpeg", url: "https://www.instagram.com/", alt: "Actress Ananya Nagalla at Deepa Bridal Studio Nellore" },
+  { id: 1, img: "/insta1.webp", url: "https://www.instagram.com/reel/DU45YpTEaG3/", alt: "Bridal makeup transformation by Deepa Bridal Studio in Nellore" },
+  { id: 2, img: "/insta2.webp", url: "https://www.instagram.com/reel/DOMaynXk6qa/", alt: "Wedding bridal look by best makeup artist in Nellore - Deepa Bridal Studio" },
+  { id: 4, img: "/insta4.webp", url: "https://www.instagram.com/reel/DWhCnjMkle4/", alt: "Luxury bridal makeup package by Deepa Bridal Studio in Magunta Layout Nellore" },
 ];
 
 function InstagramPost({ post, index }) {
