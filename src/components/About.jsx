@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Award, Heart, Users, Clock } from "lucide-react";
 
 const stats = [
@@ -9,6 +9,22 @@ const stats = [
   { icon: Users,  value: "5000+", label: "Clients Served" },
   { icon: Clock,  value: "24/7",  label: "Bridal Support" },
 ];
+
+function CountUp({ to, suffix, inView, duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    let startTime;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      setCount(Math.floor(progress * to));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [inView, to, duration]);
+  return <>{count}{suffix}</>;
+}
 
 export default function About() {
   const ref = useRef(null);
@@ -75,14 +91,21 @@ export default function About() {
 
         <motion.div initial={{opacity:0,y:40}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8,delay:0.5}}
           className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px" style={{backgroundColor:'rgba(212,160,23,0.12)'}}>
-          {stats.map(({icon:Icon,value,label})=>(
+          {stats.map(({icon:Icon,value,label})=>{
+            const num = parseInt(value);
+            const isNumeric = !isNaN(num) && value !== "24/7";
+            const suffix = isNumeric ? value.replace(/[0-9]/g,'') : '';
+            return (
             <div key={label} className="px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 flex flex-col items-center text-center group transition-colors duration-300"
               style={{backgroundColor:'#060f09',backgroundImage:`linear-gradient(45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(255,255,255,0.02) 75%),linear-gradient(-45deg,transparent 75%,rgba(255,255,255,0.02) 75%)`,backgroundSize:'5px 5px',backgroundPosition:'0 0,0 2.5px,2.5px -2.5px,-2.5px 0'}}>
               <Icon size={16} className="text-yellow-600/75 mb-2 sm:mb-3 group-hover:text-yellow-500 transition-colors" strokeWidth={1.5}/>
-              <span className="font-display text-2xl sm:text-3xl md:text-4xl gold-text mb-1">{value}</span>
+              <span className="font-display text-2xl sm:text-3xl md:text-4xl gold-text mb-1">
+                {isNumeric ? <CountUp to={num} suffix={suffix} inView={inView} /> : value}
+              </span>
               <span className="font-sans text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.28em] uppercase text-yellow-600/70">{label}</span>
             </div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>
