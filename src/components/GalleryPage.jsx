@@ -19,11 +19,7 @@ const allPhotos = [
   { id: 15, img: "/airbrush3.jpeg", alt: "Airbrush makeup look 3" },
   { id: 16, img: "/airbrush4.jpeg", alt: "Airbrush makeup look 4" },
   { id: 17, img: "/airbrush5.jpeg", alt: "Airbrush makeup look 5" },
-  { id: 18, img: "/hero.jpeg", alt: "Deepa Bridal Studio hero look" },
   { id: 19, img: "/74560cc8-0160-411c-aa5e-0b18b9388df4.webp", alt: "Bridal makeup" },
-  { id: 20, img: "/train.jpeg", alt: "Training session" },
-  { id: 21, img: "/train2.jpeg", alt: "Training session" },
-  { id: 22, img: "/train3.jpeg", alt: "Training session" },
 ];
 
 export default function GalleryPage() {
