@@ -15,7 +15,7 @@ const bridalPackages = [
   { title: "Airbrush Makeup Nellore",
     desc: "Ultra-lightweight airbrush application for a second-skin finish. Transfer-proof, sweat-proof, and weightless. Premium airbrush makeup artist in Nellore.",
     features: ["4K Resolution Finish", "Transfer-Proof Formula", "Buildable Coverage", "Lasts 16+ Hours"],
-    img: "/airbrush1.webp" },
+    img: "/airbrush2.webp" },
 ];
 
 function BridalImage({ src, title }) {
