@@ -48,7 +48,7 @@ export default function Testimonials() {
               "{testimonials[current].text}"
             </motion.blockquote>
             <div className="text-center">
-              <p className="font-display text-lg gold-text">{testimonials[current].name}</p>
+              <p className="font-display text-xl gold-text">{testimonials[current].name}</p>
               <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-yellow-600/70 mt-1">{testimonials[current].occasion}</p>
             </div>
           </div>

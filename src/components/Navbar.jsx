@@ -62,7 +62,7 @@ export default function Navbar() {
             className="touch-target flex items-center gap-2 px-4 py-2 border border-yellow-700/50 hover:border-yellow-500 hover:bg-yellow-500/8 transition-all duration-300 group"
             aria-label="Call Deepa Bridal Studio at +91 79933 93339">
             <Phone size={12} className="text-yellow-500 group-hover:animate-pulse"/>
-            <span className="font-sans text-xs tracking-[0.15em] gold-text">Call</span>
+            <span className="font-sans text-sm tracking-[0.15em] gold-text">Call</span>
           </a>
         </div>
         <button className="lg:hidden text-yellow-500 touch-target flex items-center justify-center" onClick={()=>setMenuOpen(!menuOpen)}
@@ -93,7 +93,7 @@ export default function Navbar() {
                 <a href="tel:+917993393339" className="touch-target flex items-center gap-2 flex-1 px-4 py-3 border border-yellow-700/40 justify-center"
                   aria-label="Call Deepa Bridal Studio at +91 79933 93339">
                   <Phone size={14} className="text-yellow-500"/>
-                  <span className="font-sans text-xs tracking-[0.2em] gold-text">Call Now</span>
+                  <span className="font-sans text-sm tracking-[0.2em] gold-text">Call Now</span>
                 </a>
               </div>
             </div>

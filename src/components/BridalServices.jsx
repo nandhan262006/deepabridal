@@ -83,10 +83,10 @@ function BridalPackageCard({ pkg, index }) {
       <PhotoSlider images={pkg.images} title={pkg.title} />
       <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
         <div className="mb-3">
-          <h3 className="font-display text-xl gold-text">{pkg.title}</h3>
+          <h3 className="font-display text-2xl gold-text">{pkg.title}</h3>
           <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
         </div>
-        <p className="font-display text-2xl gold-text mb-3">{pkg.price}</p>
+        <p className="font-display text-3xl gold-text mb-3">{pkg.price}</p>
         <div className="divider-gold mb-4 opacity-25" />
         <p className="font-body text-sm text-yellow-100/85 leading-relaxed mb-5 flex-1">{pkg.desc}</p>
         <ul className="space-y-2 mt-auto">

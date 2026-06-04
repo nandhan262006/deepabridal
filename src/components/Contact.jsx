@@ -62,7 +62,7 @@ export default function Contact() {
               style={{background:'linear-gradient(135deg,#0e2a1a,#060f09)'}}
               aria-label="Call Deepa Bridal Studio Nellore at +91 79933 93339">
               <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-yellow-700/75 mb-2">Call Now</p>
-              <p className="font-display text-2xl sm:text-3xl gold-text">799 339 3339</p>
+              <p className="font-display text-3xl sm:text-4xl gold-text">799 339 3339</p>
             </a>
           </motion.div>
 

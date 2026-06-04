@@ -43,7 +43,7 @@ function ServiceCard({ service, index }) {
             <service.icon size={18} className="text-yellow-500" strokeWidth={1.5} />
           </div>
           <div>
-            <h3 className="font-display text-xl gold-text">{service.title}</h3>
+            <h3 className="font-display text-2xl gold-text">{service.title}</h3>
             <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
           </div>
         </div>

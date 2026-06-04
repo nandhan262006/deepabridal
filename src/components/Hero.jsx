@@ -78,7 +78,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.a href="tel:+917993393339" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.6}}
-          className="touch-target inline-flex items-center mt-4 sm:mt-5 font-display text-xl sm:text-2xl md:text-3xl gold-text hover:opacity-80 transition-opacity"
+          className="touch-target inline-flex items-center mt-4 sm:mt-5 font-display text-2xl sm:text-3xl md:text-4xl gold-text hover:opacity-80 transition-opacity"
           aria-label="Call Deepa Bridal Studio at +91 79933 93339">
           Call: 799 339 3339
         </motion.a>

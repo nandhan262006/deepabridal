@@ -43,8 +43,8 @@ export default function About() {
             <p className="font-script text-xl sm:text-2xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
             <div className="divider-gold mb-5 sm:mb-7" />
             <div className="space-y-3 sm:space-y-4 font-body text-sm sm:text-base text-yellow-100/85 leading-relaxed">
-              <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>
-              <p>Led by <span className="gold-text">Deepa</span>, our <strong>bridal studio in Nellore</strong> combines artistry with precision — every look is tailored to enhance your natural features, complement your outfit, and photograph beautifully at every angle. We are recognized as one of the <strong>best bridal makeup artists in Nellore</strong>, serving brides across Magunta Layout, Ravindra Nagar, and all of Andhra Pradesh.</p>
+              <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold text-base sm:text-lg">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>
+              <p>Led by <span className="gold-text text-base sm:text-lg">Deepa</span>, our <strong>bridal studio in Nellore</strong> combines artistry with precision — every look is tailored to enhance your natural features, complement your outfit, and photograph beautifully at every angle. We are recognized as one of the <strong>best bridal makeup artists in Nellore</strong>, serving brides across Magunta Layout, Ravindra Nagar, and all of Andhra Pradesh.</p>
             </div>
 
             <div className="mt-5 sm:mt-7 mb-4 sm:mb-6">
