@@ -57,34 +57,25 @@ export default function About() {
             className="p-6 sm:p-8" style={{backgroundColor:'#000'}}>
             <p className="font-sans text-sm sm:text-base tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
             <h2 className="font-display section-title-lg text-5xl md:text-6xl gold-text mb-2">Get Your Dreamy Look</h2>
-            <p className="font-sans text-2xl sm:text-3xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
-            <div className="divider-gold mb-5 sm:mb-7" />
-            <div className="space-y-4 sm:space-y-5 font-body text-lg sm:text-xl text-yellow-100/85 leading-relaxed">
+            <p className="font-sans text-xl sm:text-2xl text-yellow-400/70 mb-3 sm:mb-4">With Our Professional Bridal Makeup in Nellore</p>
+            <div className="divider-gold mb-4 sm:mb-5" />
+            <div className="space-y-3 sm:space-y-4 font-body text-base sm:text-lg text-yellow-100/85 leading-relaxed">
               <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold text-lg sm:text-xl">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>
               <p>Led by <span className="gold-text text-lg sm:text-xl">Deepa</span>, our <strong>bridal studio in Nellore</strong> combines artistry with precision — every look is tailored to enhance your natural features, complement your outfit, and photograph beautifully at every angle. We are recognized as one of the <strong>best bridal makeup artists in Nellore</strong>, serving brides across Magunta Layout, Ravindra Nagar, and all of Andhra Pradesh.</p>
             </div>
 
-            <div className="mt-5 sm:mt-7 mb-4 sm:mb-6">
-              <p className="font-sans text-sm sm:text-base tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-3">Bridal Makeup Packages</p>
-              <ul className="space-y-2 sm:space-y-3 font-body text-lg sm:text-xl text-yellow-100/80">
-                <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Basic Makeup</strong> — Natural Look, light coverage — perfect for engagement ceremonies in Nellore</span></li>
-                <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">HD Makeup</strong> — Flawless HD Finish for high-definition cameras — ideal for wedding photography</span></li>
-                <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Ultra HD Makeup</strong> — Ultra-fine pigments for flawless 4K resolution</span></li>
-                <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Enhanced Skin Finish</strong> — The no-makeup makeup look for a natural glow</span></li>
-                <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Airbrush Makeup</strong> — Long-lasting, transfer-proof, camera-ready finish</span></li>
-              </ul>
-            </div>
 
-            <div className="mt-4 sm:mt-6 mb-5 sm:mb-7">
-              <p className="font-sans text-sm sm:text-base tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-3">Premium Brands Used</p>
-              <p className="font-body text-base sm:text-lg text-yellow-100/80 leading-relaxed">
+
+            <div className="mt-3 sm:mt-4 mb-4 sm:mb-5">
+              <p className="font-sans text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-2">Premium Brands Used</p>
+              <p className="font-body text-sm sm:text-base text-yellow-100/80 leading-relaxed">
                 Kryolan · MAC · Make Up Studio · Seasoul · Huda Beauty · NARS · Too Faced · Smashbox · Estée Lauder
               </p>
             </div>
 
-            <div className="mt-5 sm:mt-7 flex flex-wrap gap-1.5 sm:gap-2">
+            <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
               {["Airbrush Makeup Nellore","HD Bridal Nellore","Ultra HD Makeup","Natural Bridal Look","4K Finish","Bridal Glam"].map(tag=>(
-                <span key={tag} className="px-3 sm:px-4 py-1.5 sm:py-2 border border-yellow-800/40 font-sans text-sm sm:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-yellow-500/80">{tag}</span>
+                <span key={tag} className="px-2.5 sm:px-3 py-1 sm:py-1.5 border border-yellow-800/40 font-sans text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.18em] uppercase text-yellow-500/80">{tag}</span>
               ))}
             </div>
           </motion.div>
