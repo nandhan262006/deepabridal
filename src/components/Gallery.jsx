@@ -9,6 +9,7 @@ const instagramPosts = [
   { id: 1, img: "/insta1.webp", url: "https://www.instagram.com/reel/DU45YpTEaG3/", alt: "Bridal makeup transformation by Deepa Bridal Studio in Nellore" },
   { id: 2, img: "/insta2.webp", url: "https://www.instagram.com/reel/DOMaynXk6qa/", alt: "Wedding bridal look by best makeup artist in Nellore - Deepa Bridal Studio" },
   { id: 4, img: "/insta4.webp", url: "https://www.instagram.com/reel/DWhCnjMkle4/", alt: "Luxury bridal makeup package by Deepa Bridal Studio in Magunta Layout Nellore" },
+  { id: 7, img: "/insta6.jpeg", url: "https://www.instagram.com/", alt: "Bridal look by Deepa Bridal Studio Nellore" },
 ];
 
 function InstagramPost({ post, index }) {
