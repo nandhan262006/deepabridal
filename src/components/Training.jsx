@@ -4,9 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award } from "lucide-react";
 
 const trainingPhotos = [
-  "/train.jpeg",
-  "/train2.jpeg",
-  "/train3.jpeg",
+  { src: "/train.jpeg", label: "b3bridal studio karthika shyam" },
+  { src: "/train2.jpeg", label: "International Makeup Artist Suji" },
+  { src: "/train3.jpeg", label: "International Saree Drapist Thivyan Jayareuben" },
 ];
 
 export default function Training() {
@@ -47,16 +47,19 @@ export default function Training() {
             <div className="relative max-w-md mx-auto">
               <div className="absolute -inset-2 border border-yellow-700/20" />
               <div className="absolute -inset-4 border border-yellow-800/10" />
-              <div className="relative aspect-[4/3] overflow-hidden border border-yellow-800/30"
+              <div className="relative aspect-[4/3] overflow-hidden border border-yellow-800/30 group"
                 style={{backgroundColor:'#0a2016'}}>
                 <AnimatePresence mode="wait">
-                  <motion.img key={current} src={trainingPhotos[current]}
+                  <motion.img key={current} src={trainingPhotos[current].src}
                     alt={`Training photo ${current + 1} - Deepa Bridal Studio Nellore`}
                     initial={{opacity:0,scale:1.1}} animate={{opacity:1,scale:1}} exit={{opacity:0}}
                     transition={{duration:0.4}}
                     className="w-full h-full object-cover absolute inset-0" loading="lazy" />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-10">
+                  <p className="font-display text-xl md:text-2xl gold-text text-center leading-relaxed">{trainingPhotos[current].label}</p>
+                </div>
                 <button onClick={prev}
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
                   aria-label="Previous training photo">
