@@ -35,7 +35,7 @@ function InstagramPost({ post, index }) {
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
         <Camera size={24} className="text-white/0 group-hover:text-white/80 transition-all duration-300" />
       </div>
-      {post.id === 3 && (
+      {(post.id === 3 || post.id === 5) && (
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-4">
           <p className="font-display text-base sm:text-lg md:text-xl font-semibold gold-text leading-tight">
             Famous Playback Singer Mangli
