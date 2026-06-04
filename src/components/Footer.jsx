@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
           {/* Quick Links */}
           <div>
-            <p className="font-sans text-[13px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Quick Links</p>
+            <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Quick Links</p>
             <ul className="space-y-2">
               {["Home","About","Services","Bridal Packages","Gallery","FAQ","Testimonials","Contact"].map(link=>(
                 <li key={link}>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
           {/* Services */}
           <div>
-            <p className="font-sans text-[13px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Our Services in Nellore</p>
+            <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Our Services in Nellore</p>
             <ul className="space-y-2 mb-6">
               {["Bridal Makeup","HD Makeup","Airbrush Makeup","Hair Styling","Skin Care","Nail Art","Engagement Makeup","Reception Makeup"].map(s=>(
                 <li key={s} className="font-body text-sm text-yellow-400/65">{s}</li>
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
           {/* Contact */}
           <div>
-            <p className="font-sans text-[13px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Contact Us</p>
+            <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-yellow-700/70 mb-5">Contact Us</p>
             <ul className="space-y-3">
               <li>
                 <a href="tel:+917993393339" className="font-body text-sm text-yellow-400/65 hover:text-yellow-400 transition-colors">
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
         <div className="h-px mb-6" style={{background:'linear-gradient(90deg,transparent,rgba(212,160,23,0.2),transparent)'}} />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-[14px] tracking-[0.2em] text-yellow-800/60">
+          <p className="font-sans text-[10px] tracking-[0.2em] text-yellow-800/60">
             &copy; {currentYear} Deepa Bridal Studio. Best Bridal Makeup Artist in Nellore. All rights reserved.
           </p>
           <p className="font-script text-lg text-yellow-700/55">Crafting beautiful brides since day one</p>

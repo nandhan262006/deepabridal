@@ -47,7 +47,7 @@ export default function InstagramGallery() {
     <section id="gallery" className="deepa-bg-flat section-padding relative overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-12">
-          <p className="font-sans text-[14px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Follow Us</p>
+          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Follow Us</p>
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Instagram</h2>
           <div className="divider-gold max-w-xs mx-auto" />
           <a href="https://www.instagram.com/deepabridalstudio/"

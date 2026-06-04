@@ -85,7 +85,7 @@ export default function FAQ() {
       aria-label="Frequently asked questions about bridal makeup in Nellore - Deepa Bridal Studio">
       <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-12">
-          <p className="font-sans text-[14px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Got Questions?</p>
+          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Got Questions?</p>
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Frequently Asked Questions</h2>
           <p className="font-body text-sm sm:text-base text-yellow-100/70 max-w-2xl mx-auto">Everything you need to know about bridal makeup at Deepa Bridal Studio in Nellore.</p>
           <div className="divider-gold max-w-xs mx-auto mt-4" />

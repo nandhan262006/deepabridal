@@ -80,7 +80,7 @@ export default function About() {
               style={{backgroundColor:'#060f09',backgroundImage:`linear-gradient(45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(255,255,255,0.02) 75%),linear-gradient(-45deg,transparent 75%,rgba(255,255,255,0.02) 75%)`,backgroundSize:'5px 5px',backgroundPosition:'0 0,0 2.5px,2.5px -2.5px,-2.5px 0'}}>
               <Icon size={16} className="text-yellow-600/75 mb-2 sm:mb-3 group-hover:text-yellow-500 transition-colors" strokeWidth={1.5}/>
               <span className="font-display text-2xl sm:text-3xl md:text-4xl gold-text mb-1">{value}</span>
-              <span className="font-sans text-[14px] sm:text-xs tracking-[0.2em] sm:tracking-[0.28em] uppercase text-yellow-600/70">{label}</span>
+              <span className="font-sans text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.28em] uppercase text-yellow-600/70">{label}</span>
             </div>
           ))}
         </motion.div>
