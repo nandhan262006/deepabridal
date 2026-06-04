@@ -4,10 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award } from "lucide-react";
 
 const trainingPhotos = [
-  "/training1.webp",
-  "/training2.webp",
-  "/training3.webp",
-  "/training4.webp",
+  "/train.jpeg",
+  "/train2.jpeg",
+  "/train3.jpeg",
 ];
 
 export default function Training() {
