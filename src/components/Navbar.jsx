@@ -44,13 +44,13 @@ export default function Navbar() {
             <li key={link.name}>
               {link.external ? (
                 <Link to={link.href}
-                  className="font-sans text-xs tracking-[0.2em] uppercase text-yellow-400/80 hover:text-yellow-400 transition-colors duration-300 relative group">
+                  className="font-sans text-sm tracking-[0.2em] uppercase text-yellow-400/80 hover:text-yellow-400 transition-colors duration-300 relative group">
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-yellow-600 group-hover:w-full transition-all duration-300" />
                 </Link>
               ) : (
                 <a href={link.href}
-                  className="font-sans text-xs tracking-[0.2em] uppercase text-yellow-400/80 hover:text-yellow-400 transition-colors duration-300 relative group">
+                  className="font-sans text-sm tracking-[0.2em] uppercase text-yellow-400/80 hover:text-yellow-400 transition-colors duration-300 relative group">
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-yellow-600 group-hover:w-full transition-all duration-300" />
                 </a>
@@ -64,13 +64,13 @@ export default function Navbar() {
             className="touch-target flex items-center gap-2 px-4 py-2 border border-green-700/50 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group"
             aria-label="Book via WhatsApp">
             <MessageCircle size={12} className="text-green-400 group-hover:animate-pulse"/>
-            <span className="font-sans text-xs tracking-[0.15em] text-green-300/90">WhatsApp</span>
+            <span className="font-sans text-sm tracking-[0.15em] text-green-300/90">WhatsApp</span>
           </a>
           <a href="tel:+917993393339"
             className="touch-target flex items-center gap-2 px-4 py-2 border border-yellow-700/50 hover:border-yellow-500 hover:bg-yellow-500/8 transition-all duration-300 group"
             aria-label="Call Deepa Bridal Studio at +91 79933 93339">
             <Phone size={12} className="text-yellow-500 group-hover:animate-pulse"/>
-            <span className="font-sans text-sm tracking-[0.15em] gold-text">Call</span>
+            <span className="font-sans text-base tracking-[0.15em] gold-text">Call</span>
           </a>
         </div>
         <button className="lg:hidden text-yellow-500 touch-target flex items-center justify-center" onClick={()=>setMenuOpen(!menuOpen)}
@@ -89,10 +89,10 @@ export default function Navbar() {
               {navLinks.map(link=>(
                 link.external ? (
                   <Link key={link.name} to={link.href} onClick={()=>setMenuOpen(false)}
-                    className="touch-target flex items-center font-sans text-sm tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link.name}</Link>
+                    className="touch-target flex items-center font-sans text-base tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link.name}</Link>
                 ) : (
                   <a key={link.name} href={link.href} onClick={()=>setMenuOpen(false)}
-                    className="touch-target flex items-center font-sans text-sm tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link.name}</a>
+                    className="touch-target flex items-center font-sans text-base tracking-[0.25em] uppercase text-yellow-400/75 hover:text-yellow-400 transition-colors">{link.name}</a>
                 )
               ))}
               <div className="flex gap-2 mt-2">
@@ -101,12 +101,12 @@ export default function Navbar() {
                   className="touch-target flex items-center gap-2 flex-1 px-4 py-3 border border-green-700/40 justify-center"
                   aria-label="Book via WhatsApp">
                   <MessageCircle size={14} className="text-green-400"/>
-                  <span className="font-sans text-xs tracking-[0.2em] text-green-300/90">WhatsApp</span>
+                  <span className="font-sans text-sm tracking-[0.2em] text-green-300/90">WhatsApp</span>
                 </a>
                 <a href="tel:+917993393339" className="touch-target flex items-center gap-2 flex-1 px-4 py-3 border border-yellow-700/40 justify-center"
                   aria-label="Call Deepa Bridal Studio at +91 79933 93339">
                   <Phone size={14} className="text-yellow-500"/>
-                  <span className="font-sans text-sm tracking-[0.2em] gold-text">Call Now</span>
+                  <span className="font-sans text-base tracking-[0.2em] gold-text">Call Now</span>
                 </a>
               </div>
             </div>

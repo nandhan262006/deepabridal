@@ -28,12 +28,12 @@ function ServiceCard({ service, index }) {
           <service.icon size={15} className="text-yellow-500" strokeWidth={1.5} />
         </div>
         <div>
-          <h3 className="font-display text-lg gold-text">{service.title}</h3>
-          <p className="font-sans text-[8px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
+          <h3 className="font-display text-xl gold-text">{service.title}</h3>
+          <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
         </div>
       </div>
       <div className="divider-gold mb-2 opacity-25" />
-      <p className="font-body text-xs text-yellow-100/75">{service.desc}</p>
+      <p className="font-body text-sm text-yellow-100/75">{service.desc}</p>
     </motion.div>
   );
 }
@@ -46,8 +46,8 @@ export default function Services() {
       aria-label="Bridal makeup, hair styling, skin care and nail services in Nellore by Deepa Bridal Studio">
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-8">
-          <p className="font-sans text-[9px] tracking-[0.6em] uppercase text-yellow-600/75 mb-2">What We Offer</p>
-          <h2 className="font-display text-3xl md:text-4xl gold-text">Our Services</h2>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-2">What We Offer</p>
+          <h2 className="font-display text-4xl md:text-5xl gold-text">Our Services</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {services.map((s,i)=><ServiceCard key={s.title} service={s} index={i}/>)}

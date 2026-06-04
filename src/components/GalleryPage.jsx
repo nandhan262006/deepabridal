@@ -33,11 +33,11 @@ export default function GalleryPage() {
     <div className="min-h-screen deepa-bg-flat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-32">
         <div className="text-center mb-12">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Our Work</p>
-          <h1 className="font-display text-4xl md:text-5xl gold-text mb-5">Full Gallery</h1>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Our Work</p>
+          <h1 className="font-display text-5xl md:text-6xl gold-text mb-5">Full Gallery</h1>
           <div className="divider-gold max-w-xs mx-auto" />
           <a href="/"
-            className="inline-flex items-center gap-2 mt-5 px-6 py-3 border border-yellow-700/50 text-yellow-400/80 hover:text-yellow-300 hover:border-yellow-500 transition-all font-sans text-xs tracking-[0.25em] uppercase">
+            className="inline-flex items-center gap-2 mt-5 px-6 py-3 border border-yellow-700/50 text-yellow-400/80 hover:text-yellow-300 hover:border-yellow-500 transition-all font-sans text-sm tracking-[0.25em] uppercase">
             <Camera size={14} />
             Back to Home
           </a>
@@ -55,7 +55,7 @@ export default function GalleryPage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               {photo.tag && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-3">
-                  <p className="font-display text-sm gold-text leading-tight">{photo.tag}</p>
+                  <p className="font-display text-base gold-text leading-tight">{photo.tag}</p>
                 </div>
               )}
             </motion.button>

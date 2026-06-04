@@ -83,17 +83,17 @@ function BridalPackageCard({ pkg, index }) {
       <PhotoSlider images={pkg.images} title={pkg.title} />
       <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
         <div className="mb-3">
-          <h3 className="font-display text-2xl gold-text">{pkg.title}</h3>
-          <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
+          <h3 className="font-display text-3xl gold-text">{pkg.title}</h3>
+          <p className="font-sans text-xs tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
         </div>
-        <p className="font-display text-3xl gold-text mb-3">{pkg.price}</p>
+        <p className="font-display text-4xl gold-text mb-3">{pkg.price}</p>
         <div className="divider-gold mb-4 opacity-25" />
-        <p className="font-body text-sm text-yellow-100/85 leading-relaxed mb-5 flex-1">{pkg.desc}</p>
+        <p className="font-body text-base text-yellow-100/85 leading-relaxed mb-5 flex-1">{pkg.desc}</p>
         <ul className="space-y-2 mt-auto">
           {pkg.features.map(f=>(
             <li key={f} className="flex items-center gap-3">
               <Sparkles size={10} className="text-yellow-500 flex-shrink-0" />
-              <span className="font-sans text-xs tracking-[0.08em] text-yellow-300/85">{f}</span>
+              <span className="font-sans text-sm tracking-[0.08em] text-yellow-300/85">{f}</span>
             </li>
           ))}
         </ul>
@@ -110,11 +110,11 @@ export default function BridalServices() {
       aria-label="Bridal makeup packages in Nellore - Deepa Bridal Studio">
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
         <motion.div initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Choose Your Package</p>
-          <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Bridal Packages in Nellore</h2>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Choose Your Package</p>
+          <h2 className="font-display text-5xl md:text-6xl gold-text mb-5">Bridal Packages in Nellore</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />
-            <span className="font-sans text-xl text-yellow-400/60">your perfect look awaits</span>
+            <span className="font-sans text-2xl text-yellow-400/60">your perfect look awaits</span>
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-700" />
           </div>
         </motion.div>

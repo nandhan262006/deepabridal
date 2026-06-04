@@ -23,9 +23,9 @@ export default function Testimonials() {
       </div>
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto">
         <motion.div initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Kind Words</p>
-          <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">What Our Brides Say</h2>
-          <p className="font-body text-sm sm:text-base text-yellow-100/70 max-w-2xl mx-auto">Read reviews from our happy brides who trust us as the best bridal makeup artist in Nellore.</p>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Kind Words</p>
+          <h2 className="font-display text-5xl md:text-6xl gold-text mb-5">What Our Brides Say</h2>
+          <p className="font-body text-base sm:text-lg text-yellow-100/70 max-w-2xl mx-auto">Read reviews from our happy brides who trust us as the best bridal makeup artist in Nellore.</p>
           <div className="divider-gold max-w-xs mx-auto mt-4" />
         </motion.div>
         <motion.div initial={{opacity:0}} animate={inView?{opacity:1}:{}} transition={{duration:0.9,delay:0.3}}>
@@ -44,12 +44,12 @@ export default function Testimonials() {
               ))}
             </div>
             <motion.blockquote key={current} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:0.35}}
-              className="text-center font-body text-base sm:text-lg md:text-xl lg:text-2xl text-yellow-100/85 leading-relaxed italic mb-6 sm:mb-9">
+              className="text-center font-body text-lg sm:text-xl md:text-2xl lg:text-3xl text-yellow-100/85 leading-relaxed italic mb-6 sm:mb-9">
               "{testimonials[current].text}"
             </motion.blockquote>
             <div className="text-center">
-              <p className="font-display text-xl gold-text">{testimonials[current].name}</p>
-              <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-yellow-600/70 mt-1">{testimonials[current].occasion}</p>
+              <p className="font-display text-2xl gold-text">{testimonials[current].name}</p>
+              <p className="font-sans text-xs tracking-[0.32em] uppercase text-yellow-600/70 mt-1">{testimonials[current].occasion}</p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8">
