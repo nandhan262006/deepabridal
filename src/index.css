@@ -129,7 +129,7 @@ h1, h2, h3, h4 { overflow-wrap: break-word; }
 /* ── Responsive Helpers ── */
 @media (max-width: 767px) {
   .section-padding { padding: 2rem 1rem 4rem; }
-  .hero-heading { font-size: clamp(2rem, 10vw, 2.75rem) !important; }
+  .hero-heading { font-size: clamp(1.5rem, 6vw, 2.75rem) !important; letter-spacing: 0.02em !important; }
   .hero-sub { font-size: clamp(1.75rem, 6vw, 2rem) !important; }
   .section-title-lg { font-size: clamp(1.75rem, 7vw, 2.25rem) !important; }
   .hide-mobile { display: none !important; }
