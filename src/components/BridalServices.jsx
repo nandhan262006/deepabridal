@@ -52,9 +52,7 @@ function BridalPackageCard({ pkg, index }) {
           <h3 className="font-display text-3xl gold-text">{pkg.title}</h3>
           <p className="font-sans text-xs tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
         </div>
-        <p className="font-display text-4xl gold-text mb-3">{pkg.price}</p>
         <div className="divider-gold mb-4 opacity-25" />
-        <p className="font-body text-base text-yellow-100/85 leading-relaxed mb-5 flex-1">{pkg.desc}</p>
         <ul className="space-y-2 mt-auto">
           {pkg.features.map(f=>(
             <li key={f} className="flex items-center gap-3">
