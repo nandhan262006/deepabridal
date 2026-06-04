@@ -21,31 +21,19 @@ function ServiceCard({ service, index }) {
     <motion.div ref={ref}
       initial={{opacity:0,y:50}} animate={inView?{opacity:1,y:0}:{}}
       transition={{duration:0.7,delay:index*0.12}}
-      className="relative group border border-yellow-800/30 hover:border-yellow-600/50 transition-all duration-500 p-5 sm:p-6 md:p-8 overflow-hidden"
+      className="border border-yellow-800/30 p-4"
       style={{backgroundColor:'rgba(10,25,16,0.7)'}}>
-      <div className="absolute inset-0 opacity-60" style={{
-        backgroundImage:`linear-gradient(45deg,rgba(255,255,255,0.018) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,0.018) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(255,255,255,0.018) 75%),linear-gradient(-45deg,transparent 75%,rgba(255,255,255,0.018) 75%)`,
-        backgroundSize:'5px 5px',
-        backgroundPosition:'0 0,0 2.5px,2.5px -2.5px,-2.5px 0'
-      }} />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,160,23,0.05),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute top-0 right-0 w-14 h-14 overflow-hidden">
-        <div className="absolute top-0 right-0 w-px h-7 bg-gradient-to-b from-yellow-600/50 to-transparent" />
-        <div className="absolute top-0 right-0 h-px w-7 bg-gradient-to-l from-yellow-600/50 to-transparent" />
-      </div>
-      <div className="relative z-10">
-        <div className="mb-5 flex items-center gap-4">
-          <div className="w-11 h-11 border border-yellow-700/50 flex items-center justify-center group-hover:border-yellow-500 transition-colors">
-            <service.icon size={18} className="text-yellow-500" strokeWidth={1.5} />
-          </div>
-          <div>
-            <h3 className="font-display text-2xl gold-text">{service.title}</h3>
-            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
-          </div>
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-9 h-9 border border-yellow-700/50 flex items-center justify-center">
+          <service.icon size={15} className="text-yellow-500" strokeWidth={1.5} />
         </div>
-        <div className="divider-gold mb-4 opacity-25" />
-        <p className="font-body text-sm text-yellow-100/75 leading-relaxed mb-5">{service.desc}</p>
+        <div>
+          <h3 className="font-display text-lg gold-text">{service.title}</h3>
+          <p className="font-sans text-[8px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
+        </div>
       </div>
+      <div className="divider-gold mb-2 opacity-25" />
+      <p className="font-body text-xs text-yellow-100/75">{service.desc}</p>
     </motion.div>
   );
 }
