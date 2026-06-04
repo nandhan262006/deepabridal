@@ -53,7 +53,8 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.9,delay:0.2}}>
+          <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.9,delay:0.2}}
+            className="p-6 sm:p-8" style={{backgroundColor:'rgba(0,0,0,0.45)'}}>
             <p className="font-sans text-xs sm:text-sm tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
             <h2 className="font-display section-title-lg text-4xl md:text-5xl gold-text mb-2">Get Your Dreamy Look</h2>
             <p className="font-sans text-xl sm:text-2xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
