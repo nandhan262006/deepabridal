@@ -3,7 +3,7 @@ import { ChevronDown, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="deepa-bg relative min-h-screen flex items-center justify-center overflow-hidden"
+    <section id="home" className="deepa-bg relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore">
       <div className="deepa-vignette" />
 
@@ -42,12 +42,12 @@ export default function Hero() {
           Deepa Bridal
         </motion.h1>
         <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:0.8}}
-          className="font-sans text-[10px] sm:text-xs md:text-sm tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75 mb-4 sm:mb-6">
+          className="font-sans text-[10px] sm:text-xs md:text-sm tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75 mb-3 sm:mb-4">
           Best Bridal Makeup Studio in Nellore
         </motion.p>
 
         <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.0}}
-          className="flex items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-10">
+          className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
           <div className="h-px w-6 sm:w-10 bg-yellow-700/50" />
           {["Hair","Skin","Makeup","Nails"].map((s,i)=>(
             <span key={s} className="flex items-center gap-2 sm:gap-3">
@@ -59,7 +59,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:1,delay:1.2}}
-          className="font-script hero-sub text-3xl sm:text-4xl md:text-5xl text-white/90 mb-8 sm:mb-12 leading-relaxed">
+          className="font-script hero-sub text-3xl sm:text-4xl md:text-5xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
           Signature bridal artistry by Deepa
         </motion.p>
 
@@ -78,7 +78,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.a href="tel:+917993393339" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.6}}
-          className="touch-target inline-flex items-center mt-6 sm:mt-8 font-display text-xl sm:text-2xl md:text-3xl gold-text hover:opacity-80 transition-opacity"
+          className="touch-target inline-flex items-center mt-4 sm:mt-5 font-display text-xl sm:text-2xl md:text-3xl gold-text hover:opacity-80 transition-opacity"
           aria-label="Call Deepa Bridal Studio at +91 79933 93339">
           Call: 799 339 3339
         </motion.a>
