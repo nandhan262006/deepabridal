@@ -38,18 +38,18 @@ export default function About() {
           </motion.div>
 
           <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.9,delay:0.2}}>
-            <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.45em] sm:tracking-[0.6em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
+            <p className="font-sans text-xs sm:text-sm tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
             <h2 className="font-display section-title-lg text-4xl md:text-5xl gold-text mb-2">Get Your Dreamy Look</h2>
             <p className="font-script text-xl sm:text-2xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
             <div className="divider-gold mb-5 sm:mb-7" />
-            <div className="space-y-3 sm:space-y-4 font-body text-sm sm:text-base text-yellow-100/85 leading-relaxed">
+            <div className="space-y-4 sm:space-y-5 font-body text-base sm:text-lg text-yellow-100/85 leading-relaxed">
               <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold text-base sm:text-lg">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>
               <p>Led by <span className="gold-text text-base sm:text-lg">Deepa</span>, our <strong>bridal studio in Nellore</strong> combines artistry with precision — every look is tailored to enhance your natural features, complement your outfit, and photograph beautifully at every angle. We are recognized as one of the <strong>best bridal makeup artists in Nellore</strong>, serving brides across Magunta Layout, Ravindra Nagar, and all of Andhra Pradesh.</p>
             </div>
 
             <div className="mt-5 sm:mt-7 mb-4 sm:mb-6">
-              <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-yellow-400/80 mb-3">Bridal Makeup Packages</p>
-              <ul className="space-y-1.5 sm:space-y-2 font-body text-sm text-yellow-100/80">
+              <p className="font-sans text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-3">Bridal Makeup Packages</p>
+              <ul className="space-y-2 sm:space-y-3 font-body text-base sm:text-lg text-yellow-100/80">
                 <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Basic Makeup</strong> — Natural Look, light coverage — perfect for engagement ceremonies in Nellore</span></li>
                 <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">HD Makeup</strong> — Flawless HD Finish for high-definition cameras — ideal for wedding photography</span></li>
                 <li className="flex items-start gap-2"><span className="text-yellow-500 mt-1 shrink-0">•</span><span><strong className="text-yellow-300/90">Ultra HD Makeup</strong> — Ultra-fine pigments for flawless 4K resolution</span></li>
@@ -59,15 +59,15 @@ export default function About() {
             </div>
 
             <div className="mt-4 sm:mt-6 mb-5 sm:mb-7">
-              <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-yellow-400/80 mb-3">Premium Brands Used</p>
-              <p className="font-body text-xs sm:text-sm text-yellow-100/80 leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-3">Premium Brands Used</p>
+              <p className="font-body text-sm sm:text-base text-yellow-100/80 leading-relaxed">
                 Kryolan · MAC · Make Up Studio · Seasoul · Huda Beauty · NARS · Too Faced · Smashbox · Estée Lauder
               </p>
             </div>
 
             <div className="mt-5 sm:mt-7 flex flex-wrap gap-1.5 sm:gap-2">
               {["Airbrush Makeup Nellore","HD Bridal Nellore","Ultra HD Makeup","Natural Bridal Look","4K Finish","Bridal Glam"].map(tag=>(
-                <span key={tag} className="px-3 sm:px-4 py-1.5 sm:py-2 border border-yellow-800/40 font-sans text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-yellow-500/80">{tag}</span>
+                <span key={tag} className="px-3 sm:px-4 py-1.5 sm:py-2 border border-yellow-800/40 font-sans text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.18em] uppercase text-yellow-500/80">{tag}</span>
               ))}
             </div>
           </motion.div>
@@ -80,7 +80,7 @@ export default function About() {
               style={{backgroundColor:'#060f09',backgroundImage:`linear-gradient(45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,0.02) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(255,255,255,0.02) 75%),linear-gradient(-45deg,transparent 75%,rgba(255,255,255,0.02) 75%)`,backgroundSize:'5px 5px',backgroundPosition:'0 0,0 2.5px,2.5px -2.5px,-2.5px 0'}}>
               <Icon size={16} className="text-yellow-600/75 mb-2 sm:mb-3 group-hover:text-yellow-500 transition-colors" strokeWidth={1.5}/>
               <span className="font-display text-2xl sm:text-3xl md:text-4xl gold-text mb-1">{value}</span>
-              <span className="font-sans text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.32em] uppercase text-yellow-600/70">{label}</span>
+              <span className="font-sans text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.28em] uppercase text-yellow-600/70">{label}</span>
             </div>
           ))}
         </motion.div>
