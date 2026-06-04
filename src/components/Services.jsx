@@ -44,7 +44,7 @@ function ServiceCard({ service, index }) {
           </div>
           <div>
             <h3 className="font-display text-2xl gold-text">{service.title}</h3>
-            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
+            <p className="font-sans text-[13px] tracking-[0.3em] uppercase text-yellow-600/75">{service.subtitle}</p>
           </div>
         </div>
         <div className="divider-gold mb-4 opacity-25" />
@@ -70,7 +70,7 @@ export default function Services() {
       aria-label="Bridal makeup, hair styling, skin care and nail services in Nellore by Deepa Bridal Studio">
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">What We Offer</p>
+          <p className="font-sans text-[14px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">What We Offer</p>
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Our Services in Nellore</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />

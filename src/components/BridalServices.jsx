@@ -84,7 +84,7 @@ function BridalPackageCard({ pkg, index }) {
       <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
         <div className="mb-3">
           <h3 className="font-display text-2xl gold-text">{pkg.title}</h3>
-          <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
+          <p className="font-sans text-[13px] tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
         </div>
         <p className="font-display text-3xl gold-text mb-3">{pkg.price}</p>
         <div className="divider-gold mb-4 opacity-25" />
@@ -110,7 +110,7 @@ export default function BridalServices() {
       aria-label="Bridal makeup packages in Nellore - Deepa Bridal Studio">
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
         <motion.div initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-[10px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Choose Your Package</p>
+          <p className="font-sans text-[14px] tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Choose Your Package</p>
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Bridal Packages in Nellore</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />
