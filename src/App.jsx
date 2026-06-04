@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Training from "./components/Training";
 import Services from "./components/Services";
 import BridalServices from "./components/BridalServices";
 import Gallery from "./components/Gallery";
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Training />
         <Services />
         <BridalServices />
         <Gallery />
