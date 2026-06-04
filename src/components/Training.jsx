@@ -57,8 +57,8 @@ export default function Training() {
                     className="w-full h-full object-cover absolute inset-0" loading="lazy" />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-10">
-                  <p className="font-display text-xl md:text-2xl gold-text text-center leading-relaxed">{trainingPhotos[current].label}</p>
+                <div className="absolute bottom-0 right-0 p-4 z-10">
+                  <p className="font-display text-sm md:text-base gold-text text-right leading-snug">{trainingPhotos[current].label}</p>
                 </div>
                 <button onClick={prev}
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 border border-yellow-700/50 flex items-center justify-center hover:border-yellow-500 hover:bg-yellow-500/10 transition-all bg-green-950/70 z-10"
