@@ -3,7 +3,8 @@ import { ChevronDown, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="deepa-bg relative min-h-[60vh] sm:min-h-[85vh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-28 overflow-hidden"
+    <section id="home"
+      className="deepa-bg relative min-h-[60vh] sm:min-h-[85vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden"
       aria-label="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore">
       <div className="deepa-vignette" />
 
@@ -19,35 +20,37 @@ export default function Hero() {
         <circle cx="72" cy="8" r="2" fill="#d4a017"/>
       </svg>
 
-      <div className="relative z-[3] text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-[3] flex flex-col items-center text-center w-full px-6 max-w-5xl gap-y-5 sm:gap-y-6">
+
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8,delay:0.2}}
-          className="flex items-center justify-center gap-2 sm:gap-4 mb-5 sm:mb-8">
+          className="flex items-center justify-center gap-2 sm:gap-4">
           <div className="h-px w-10 sm:w-16 bg-gradient-to-r from-transparent to-yellow-600" />
           <div className="flex items-center gap-1.5 sm:gap-2">
             <Sparkles size={10} className="text-yellow-500 hidden sm:block" />
-            <span className="font-sans text-xs tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-500/80">Est. in Nellore</span>
+            <span className="font-sans text-xs tracking-[0.4em] uppercase text-yellow-500/80">Est. in Nellore</span>
             <Sparkles size={10} className="text-yellow-500 hidden sm:block" />
           </div>
           <div className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-yellow-600" />
         </motion.div>
 
         <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}}
-          transition={{duration:1,delay:0.4,type:"spring",stiffness:80}}
-          className="mb-4 sm:mb-6 flex justify-center">
-          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Luxury Bridal Makeup Artist in Nellore" width="500" height="500" className="h-32 sm:h-44 lg:h-52 w-auto" loading="eager" />
+          transition={{duration:1,delay:0.4,type:"spring",stiffness:80}}>
+          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Luxury Bridal Makeup Artist in Nellore"
+            width="500" height="500" className="h-32 sm:h-44 lg:h-52 w-auto mx-auto" loading="eager" />
         </motion.div>
 
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.9,delay:0.6}}
-          className="font-display hero-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-[0.02em] sm:tracking-[0.08em] uppercase gold-text mb-2">
+          className="font-display hero-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-[0.02em] sm:tracking-[0.08em] uppercase gold-text">
           Deepa Bridal Studio
         </motion.h1>
+
         <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:0.8}}
-          className="font-sans text-xs sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75 mb-3 sm:mb-4">
+          className="font-sans text-xs sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75">
           Best Bridal Makeup Studio in Nellore
         </motion.p>
 
         <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.0}}
-          className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          className="flex items-center justify-center gap-2 sm:gap-3">
           <div className="h-px w-6 sm:w-10 bg-yellow-700/50" />
           {["Hair","Skin","Makeup","Nails"].map((s,i)=>(
             <span key={s} className="flex items-center gap-2 sm:gap-3">
@@ -59,26 +62,27 @@ export default function Hero() {
         </motion.div>
 
         <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:1,delay:1.2}}
-          className="font-display hero-sub text-4xl sm:text-5xl md:text-6xl gold-text italic font-light mb-6 sm:mb-8 leading-relaxed" style={{textShadow:'0 2px 12px rgba(0,0,0,0.6)'}}>
+          className="font-display hero-sub text-4xl sm:text-5xl md:text-6xl gold-text italic font-light leading-relaxed"
+          style={{textShadow:'0 2px 12px rgba(0,0,0,0.6)'}}>
           Signature bridal artistry by Deepa
         </motion.p>
 
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8,delay:1.4}}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          className="flex flex-col items-center w-full sm:flex-row sm:justify-center gap-3">
           <a href="#contact"
-            className="touch-target w-full sm:w-auto flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-yellow-700 via-yellow-400 to-yellow-700 text-green-950 font-sans text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase font-semibold hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
+            className="touch-target w-full max-w-xs sm:max-w-none sm:w-auto flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-yellow-700 via-yellow-400 to-yellow-700 text-green-950 font-sans text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase font-semibold hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
             aria-label="Book your bridal makeup appointment at Deepa Bridal Studio Nellore">
             Book Your Bridal Look
           </a>
           <a href="#gallery"
-            className="touch-target w-full sm:w-auto flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 border border-yellow-600/50 text-yellow-300/85 font-sans text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase hover:border-yellow-400 hover:bg-yellow-500/5 transition-all duration-300"
+            className="touch-target w-full max-w-xs sm:max-w-none sm:w-auto flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 border border-yellow-600/50 text-yellow-300/85 font-sans text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase hover:border-yellow-400 hover:bg-yellow-500/5 transition-all duration-300"
             aria-label="View Deepa Bridal Studio portfolio and bridal makeup gallery">
             View Portfolio
           </a>
         </motion.div>
 
         <motion.a href="tel:+917993393339" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.6}}
-          className="touch-target inline-flex items-center mt-4 sm:mt-5 font-display text-3xl sm:text-4xl md:text-5xl gold-text hover:opacity-80 transition-opacity"
+          className="touch-target font-display text-3xl sm:text-4xl md:text-5xl gold-text hover:opacity-80 transition-opacity"
           aria-label="Call Deepa Bridal Studio at +91 79933 93339">
           Call: 799 339 3339
         </motion.a>
