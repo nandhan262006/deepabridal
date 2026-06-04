@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { Award, Heart, Users, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Heart,  value: "500+", label: "Happy Brides" },
-  { icon: Award,  value: "8+",   label: "Years Experience" },
-  { icon: Users,  value: "1000+",label: "Clients Served" },
-  { icon: Clock,  value: "24/7", label: "Bridal Support" },
+  { icon: Heart,  value: "5000+", label: "Happy Brides" },
+  { icon: Award,  value: "10+",   label: "Years Experience" },
+  { icon: Users,  value: "5000+", label: "Clients Served" },
+  { icon: Clock,  value: "24/7",  label: "Bridal Support" },
 ];
 
 export default function About() {
