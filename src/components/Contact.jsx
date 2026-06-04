@@ -27,7 +27,7 @@ export default function Contact() {
           {/* Info */}
           <motion.div initial={{opacity:0,x:-40}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.2}} className="space-y-5">
             <div className="border border-yellow-800/30 p-5 sm:p-6 md:p-8" style={textureBg}>
-              <p className="font-script text-2xl sm:text-3xl text-yellow-400/80 mb-5 sm:mb-6">Let's connect</p>
+              <p className="font-sans text-2xl sm:text-3xl text-yellow-400/80 mb-5 sm:mb-6">Let's connect</p>
               <div className="space-y-5">
                 {[
                   {icon:Phone, label:"Call / WhatsApp", value:"+91 79933 93339", href:"tel:+917993393339"},

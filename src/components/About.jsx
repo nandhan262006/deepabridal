@@ -56,7 +56,7 @@ export default function About() {
           <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.9,delay:0.2}}>
             <p className="font-sans text-xs sm:text-sm tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
             <h2 className="font-display section-title-lg text-4xl md:text-5xl gold-text mb-2">Get Your Dreamy Look</h2>
-            <p className="font-script text-xl sm:text-2xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
+            <p className="font-sans text-xl sm:text-2xl text-yellow-400/70 mb-4 sm:mb-6">With Our Professional Bridal Makeup in Nellore</p>
             <div className="divider-gold mb-5 sm:mb-7" />
             <div className="space-y-4 sm:space-y-5 font-body text-base sm:text-lg text-yellow-100/85 leading-relaxed">
               <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold text-base sm:text-lg">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>

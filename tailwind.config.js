@@ -24,7 +24,7 @@ export default {
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
-        script: ['"Great Vibes"', 'cursive'],
+
         body: ['"Cormorant Garamond"', 'serif'],
         sans: ['"Jost"', 'sans-serif'],
       },

@@ -114,7 +114,7 @@ export default function BridalServices() {
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-5">Bridal Packages in Nellore</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />
-            <span className="font-script text-xl text-yellow-400/60">your perfect look awaits</span>
+            <span className="font-sans text-xl text-yellow-400/60">your perfect look awaits</span>
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-700" />
           </div>
         </motion.div>

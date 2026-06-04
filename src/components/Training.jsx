@@ -36,7 +36,7 @@ export default function Training() {
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-2">Trained by Professionals</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-yellow-700" />
-            <span className="font-script text-xl text-yellow-400/60">master the craft</span>
+            <span className="font-sans text-xl text-yellow-400/60">master the craft</span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-yellow-700" />
           </div>
         </motion.div>

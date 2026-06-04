@@ -73,7 +73,7 @@ export default function Footer() {
           <p className="font-sans text-[10px] tracking-[0.2em] text-yellow-800/60">
             &copy; {currentYear} Deepa Bridal Studio. Best Bridal Makeup Artist in Nellore. All rights reserved.
           </p>
-          <p className="font-script text-lg text-yellow-700/55">Crafting beautiful brides since day one</p>
+          <p className="font-sans text-lg text-yellow-700/55">Crafting beautiful brides since day one</p>
         </div>
       </div>
     </footer>
