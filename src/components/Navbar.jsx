@@ -39,7 +39,7 @@ export default function Navbar() {
         <a href="#home" className="flex items-center gap-3" aria-label="Deepa Bridal Studio - Home">
           <img src="/LOGO.png" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" className="h-10 sm:h-12 md:h-14 w-auto" loading="eager" />
         </a>
-        <ul className="hidden lg:flex items-center gap-6 xl:gap-8" role="list">
+        <ul className="hidden lg:flex items-center gap-4 xl:gap-5" role="list">
           {navLinks.map(link=>(
             <li key={link.name}>
               <a href={link.href}
