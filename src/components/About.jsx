@@ -68,8 +68,8 @@ export default function About() {
 
             <div className="mt-3 sm:mt-4 mb-4 sm:mb-5">
               <p className="font-sans text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-2">Premium Brands Used</p>
-              <p className="font-body text-sm sm:text-base text-yellow-100/80 leading-relaxed">
-                Kryolan · MAC · Make Up Studio · Seasoul · Huda Beauty · NARS · Too Faced · Smashbox · Estée Lauder
+              <p className="font-body text-sm sm:text-base leading-relaxed">
+                <strong className="text-yellow-300">Kryolan</strong> · <strong className="text-yellow-300">MAC</strong> · <strong className="text-yellow-300">Make Up Studio</strong> · <strong className="text-yellow-300">Seasoul</strong> · <strong className="text-yellow-300">Huda Beauty</strong> · <strong className="text-yellow-300">NARS</strong> · <strong className="text-yellow-300">Too Faced</strong> · <strong className="text-yellow-300">Smashbox</strong> · <strong className="text-yellow-300">Estée Lauder</strong>
               </p>
             </div>
 
