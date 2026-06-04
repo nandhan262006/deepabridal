@@ -7,20 +7,20 @@ const bridalPackages = [
   { title: "Normal Bridal Makeup Nellore", 
     desc: "Classic bridal look with high-quality products. Perfect for intimate ceremonies and traditional functions at your wedding in Nellore.",
     features: ["Matte/Glossy Finish", "Long-Lasting Formula", "Bridal Trials Included", "Touch-up Kit"],
-    images: ["/hero.png","/74560cc8-0160-411c-aa5e-0b18b9388df4.png","/hero.png","/74560cc8-0160-411c-aa5e-0b18b9388df4.png"] },
+    images: ["/hero.webp","/74560cc8-0160-411c-aa5e-0b18b9388df4.webp","/hero.webp","/74560cc8-0160-411c-aa5e-0b18b9388df4.webp"] },
   { title: "HD Bridal Makeup Nellore",
     desc: "Flawless HD finish designed for high-definition photography. Airbrushed perfection for your big day. The best HD bridal makeup in Nellore.",
     features: ["HD Foundation & Setting", "Camera-Ready Finish", "Water-Resistant", "Complimentary Trial"],
-    images: ["/hd1.jpeg","/hd2.jpeg","/hd3.jpeg","/hd4.jpeg","/hd5.jpeg"] },
+    images: ["/hd1.webp","/hd2.webp","/hd3.webp","/hd4.webp","/hd5.webp"] },
   { title: "Airbrush Makeup Nellore",
     desc: "Ultra-lightweight airbrush application for a second-skin finish. Transfer-proof, sweat-proof, and weightless. Premium airbrush makeup artist in Nellore.",
     features: ["4K Resolution Finish", "Transfer-Proof Formula", "Buildable Coverage", "Lasts 16+ Hours"],
-    images: ["/airbrush1.jpeg","/airbrush2.jpeg","/airbrush3.jpeg","/airbrush4.jpeg","/airbrush5.jpeg"] },
+    images: ["/airbrush1.webp","/airbrush2.webp","/airbrush3.webp","/airbrush4.webp","/airbrush5.webp"] },
 ];
 
 const rotateMap = {
-  "/hd2.jpeg": "rotate-90",
-  "/hd3.jpeg": "rotate-90",
+  "/hd2.webp": "rotate-90",
+  "/hd3.webp": "rotate-90",
 };
 
 function PhotoSlider({ images, title }) {

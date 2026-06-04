@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
         style={{background:'linear-gradient(135deg,#833ab4,#fd1d1d,#f56040)'}}
         aria-label="Follow Deepa Bridal Studio on Instagram"
       >
-        <img src="/instalogo.jpeg" alt="Instagram - Deepa Bridal Studio Nellore" className="w-5 sm:w-7 h-5 sm:h-7 rounded-full" />
+        <img src="/instalogo.webp" alt="Instagram - Deepa Bridal Studio Nellore" className="w-5 sm:w-7 h-5 sm:h-7 rounded-full" />
       </motion.a>
       <motion.a
         href={waLink}

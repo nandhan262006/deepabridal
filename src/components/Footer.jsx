@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/LOGO.png" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" className="h-10 w-auto" loading="lazy" />
+              <img src="/LOGO.webp" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-10 w-auto" loading="lazy" />
             </div>
             <p className="font-body text-sm text-yellow-300/60 leading-relaxed mb-4">
               Signature bridal artistry for the modern Indian bride. Every look crafted with precision, love, and expertise.
