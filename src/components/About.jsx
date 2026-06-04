@@ -4,9 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import { Award, Heart, Users, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Heart,  value: "5000+", label: "Happy Brides" },
+  { icon: Heart,  value: "1000+", label: "Happy Brides" },
   { icon: Award,  value: "10+",   label: "Years Experience" },
-  { icon: Users,  value: "5000+", label: "Clients Served" },
+  { icon: Users,  value: "1500+", label: "Clients Served" },
   { icon: Clock,  value: "24/7",  label: "Bridal Support" },
 ];
 
