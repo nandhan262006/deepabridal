@@ -38,8 +38,8 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.9,delay:0.6}}
-          className="font-display hero-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-[0.06em] sm:tracking-[0.1em] uppercase gold-text mb-2">
-          Deepa Bridal
+          className="font-display hero-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase gold-text mb-2">
+          Deepa Bridal Studio
         </motion.h1>
         <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:0.8}}
           className="font-sans text-[10px] sm:text-xs md:text-sm tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75 mb-3 sm:mb-4">
