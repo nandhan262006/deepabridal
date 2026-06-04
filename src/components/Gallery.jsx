@@ -36,8 +36,8 @@ function InstagramPost({ post, index }) {
         <Camera size={24} className="text-white/0 group-hover:text-white/80 transition-all duration-300" />
       </div>
       {post.id === 3 && (
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent pt-8 pb-2 px-3">
-          <p className="font-sans text-[10px] sm:text-xs tracking-[0.15em] text-yellow-400/90 font-semibold">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-4">
+          <p className="font-display text-base sm:text-lg md:text-xl font-semibold gold-text leading-tight">
             Famous Playback Singer Mangli
           </p>
         </div>
