@@ -6,7 +6,7 @@ import { Camera, ArrowRight } from "lucide-react";
 
 const previewPosts = [
   { id: 3, img: "/insta3.webp", alt: "Bridal hairstyle and makeup", tag: "Famous Playback Singer Mangli" },
-  { id: 6, img: "/ananyanagalla.jpeg", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
+  { id: 6, img: "/ananyanagalla.webp", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
   { id: 1, img: "/insta1.webp", alt: "Bridal makeup transformation" },
 ];
 
