@@ -73,6 +73,9 @@ export default function Footer() {
           <p className="font-sans text-xs tracking-[0.2em] text-yellow-800/60">
             &copy; {currentYear} Deepa Bridal Studio. Best Bridal Makeup Artist in Nellore. All rights reserved.
           </p>
+          <p className="font-sans text-[10px] tracking-[0.15em] text-yellow-800/40">
+            Website by <a href="tel:+917995544220" className="hover:text-yellow-600 transition-colors">Nandhan</a> — 799 554 4220 &middot; Built with opencode
+          </p>
           <p className="font-sans text-xl text-yellow-700/55">Crafting beautiful brides since day one</p>
         </div>
       </div>
