@@ -4,18 +4,14 @@ import { useRef } from "react";
 import { Scissors, Sparkles, Star, Gem } from "lucide-react";
 
 const services = [
-  { icon: Scissors, title: "Hair Services Nellore", subtitle: "Style & Care",
-    desc: "Complete hair care solutions in Nellore — from precision cuts to advanced treatments. We restore, style, and transform your hair for any occasion.",
-    items: ["Haircut","Hair Spa","Straightening","Smoothing","Keratin","Botox","Nanoplastia"] },
-  { icon: Star, title: "Skin Care Studio Nellore", subtitle: "Glow & Radiance",
-    desc: "Targeted skin treatments that address pigmentation, dullness, and uneven tone. Reveal a brighter, smoother, more luminous complexion at our Nellore studio.",
-    items: ["Whitening Treatment","Pigmentation Treatment","Korean Facial","Hydra Facial"] },
-  { icon: Sparkles, title: "Bridal Makeup Nellore", subtitle: "Artistry & Elegance",
-    desc: "Signature bridal makeup tailored to your skin tone, attire, and personality. Long-lasting, HD-ready finishes for every function. The best bridal makeup in Nellore.",
-    items: ["Engagement Makeup","Wedding Day Look","Reception Glam","Saree Draping"] },
-  { icon: Gem, title: "Nail Studio Nellore", subtitle: "Details & Design",
-    desc: "Intricate nail art and gel manicures designed to complement your bridal jewelry — from classic french to ornate floral patterns at our nail studio in Nellore.",
-    items: ["Bridal Nail Art","Gel Extensions","French Manicure","Custom Designs"] },
+  { icon: Scissors, title: "Hair Services", subtitle: "Style & Care",
+    desc: "Haircuts, styling, and advanced treatments." },
+  { icon: Star, title: "Skin Care Studio", subtitle: "Glow & Radiance",
+    desc: "Facials and targeted treatments for a brighter complexion." },
+  { icon: Sparkles, title: "Bridal Makeup", subtitle: "Artistry & Elegance",
+    desc: "HD-ready bridal makeup tailored to your style." },
+  { icon: Gem, title: "Nail Studio", subtitle: "Details & Design",
+    desc: "Bridal nail art, gel extensions, and custom designs." },
 ];
 
 function ServiceCard({ service, index }) {
@@ -49,14 +45,6 @@ function ServiceCard({ service, index }) {
         </div>
         <div className="divider-gold mb-4 opacity-25" />
         <p className="font-body text-sm text-yellow-100/75 leading-relaxed mb-5">{service.desc}</p>
-        <ul className="space-y-1.5">
-          {service.items.map(items=>(
-            <li key={items} className="flex items-center gap-3">
-              <span className="w-1 h-1 rounded-full bg-yellow-500 flex-shrink-0" />
-              <span className="font-sans text-xs tracking-[0.12em] text-yellow-300/80">{items}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </motion.div>
   );
