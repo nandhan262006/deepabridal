@@ -23,7 +23,7 @@ function BridalImage({ src, title }) {
     <div className="relative aspect-[1/1] overflow-hidden border border-yellow-800/30 mb-5"
       style={{backgroundColor:'#0a2016'}}>
       <img src={src} alt={`${title} - Deepa Bridal Studio Nellore`}
-        className="w-full h-full object-cover absolute inset-0" loading="lazy" />
+        className="w-full h-full object-cover object-top absolute inset-0" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-t from-green-950/30 to-transparent pointer-events-none" />
     </div>
   );
