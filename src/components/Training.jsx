@@ -10,9 +10,10 @@ const trainingPhotos = [
 ];
 
 const workExperiencePhotos = [
-  { src: "/work1.webp", label: "Work Experience 1" },
-  { src: "/work2.webp", label: "Work Experience 2" },
-  { src: "/work3.webp", label: "Work Experience 3" },
+  { src: "/greentends.webp", label: "Green Trends" },
+  { src: "/javedhabib.webp", label: "Javed Habib" },
+  { src: "/naturals.webp", label: "Naturals" },
+  { src: "/page3.webp", label: "Face3" },
 ];
 
 function Slider({ photos, label, icon: Icon, inView }) {
