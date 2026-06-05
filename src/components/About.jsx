@@ -56,27 +56,14 @@ export default function About() {
           <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.9,delay:0.2}}
             className="p-6 sm:p-8" style={{backgroundColor:'#000'}}>
             <p className="font-sans text-sm sm:text-base tracking-[0.4em] sm:tracking-[0.5em] uppercase text-yellow-600/75 mb-3 sm:mb-4">Deepa Bridal Studio</p>
-            <h2 className="font-display section-title-lg text-5xl md:text-6xl gold-text mb-2">Get Your Dreamy Look</h2>
-            <p className="font-sans text-xl sm:text-2xl text-yellow-400/70 mb-3 sm:mb-4">With Our Professional Bridal Makeup in Nellore</p>
+            <h2 className="font-display section-title-lg text-5xl md:text-6xl gold-text mb-2">Meet Deepa</h2>
+            <p className="font-sans text-xl sm:text-2xl text-yellow-400/70 mb-3 sm:mb-4">Professional Makeup Artist in Nellore</p>
             <div className="divider-gold mb-4 sm:mb-5" />
             <div className="space-y-3 sm:space-y-4 font-body text-base sm:text-lg text-yellow-100/85 leading-relaxed">
-              <p>Choosing the right <strong>bridal makeup artist in Nellore</strong> is the most important decision for every bride. At <strong className="gold-text font-semibold text-lg sm:text-xl">Deepa Bridal Studio</strong>, we specialize in creating timeless, flawless, and camera-ready bridal looks with customized care and premium products.</p>
-              <p>Led by <span className="gold-text text-lg sm:text-xl">Deepa</span>, our <strong>bridal studio in Nellore</strong> combines artistry with precision — every look is tailored to enhance your natural features, complement your outfit, and photograph beautifully at every angle. We are recognized as one of the <strong>best bridal makeup artists in Nellore</strong>, serving brides across Magunta Layout, Ravindra Nagar, and all of Andhra Pradesh.</p>
-            </div>
-
-
-
-            <div className="mt-3 sm:mt-4 mb-4 sm:mb-5">
-              <p className="font-sans text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] uppercase text-yellow-400/80 mb-2">Premium Brands Used</p>
-              <p className="font-body text-sm sm:text-base leading-relaxed">
-                <strong className="text-yellow-300">Kryolan</strong> · <strong className="text-yellow-300">MAC</strong> · <strong className="text-yellow-300">Make Up Studio</strong> · <strong className="text-yellow-300">Seasoul</strong> · <strong className="text-yellow-300">Huda Beauty</strong> · <strong className="text-yellow-300">NARS</strong> · <strong className="text-yellow-300">Too Faced</strong> · <strong className="text-yellow-300">Smashbox</strong> · <strong className="text-yellow-300">Estée Lauder</strong>
-              </p>
-            </div>
-
-            <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
-              {["Airbrush Makeup Nellore","HD Bridal Nellore","Ultra HD Makeup","Natural Bridal Look","4K Finish","Bridal Glam"].map(tag=>(
-                <span key={tag} className="px-2.5 sm:px-3 py-1 sm:py-1.5 border border-yellow-800/40 font-sans text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.18em] uppercase text-yellow-500/80">{tag}</span>
-              ))}
+              <p>Hi, I am <span className="gold-text text-lg sm:text-xl">Deepa</span>, a professional makeup artist in Nellore. I have been in this field for 15 years. Before this, I worked for 9 years in professional salons — <strong className="text-yellow-300">Green Trends</strong>, <strong className="text-yellow-300">Javed Habib</strong>, <strong className="text-yellow-300">Naturals</strong>, and <strong className="text-yellow-300">Page3</strong>. I started my own salon under my name 6 years ago.</p>
+              <p>The reason for my success is that I always think from the client's perspective. I ask myself, if I were the client, how would my feedback be, and I provide the best service accordingly. Because of this, people started talking about my name and my service. I never compromise on quality; everything I use is the best, branded products. That is why all my clients remain very friendly and kind to me.</p>
+              <p>No matter how many years pass, they continue to call me for bookings. Based on current trends and the client's budget, we now offer services according to their budget. We are ready to provide services starting from any budget they need.</p>
+              <p className="gold-text text-lg sm:text-xl font-semibold">This is Deepa Bridal Studio.</p>
             </div>
           </motion.div>
         </div>
