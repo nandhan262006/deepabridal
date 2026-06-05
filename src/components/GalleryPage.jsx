@@ -19,7 +19,6 @@ const allPhotos = [
   { id: 10, img: "/hd3.webp", alt: "HD Bridal makeup look 3" },
   { id: 12, img: "/hd5.webp", alt: "HD Bridal makeup look 5" },
   { id: 15, img: "/airbrush3.webp", alt: "Airbrush makeup look 3" },
-  { id: 19, img: "/74560cc8-0160-411c-aa5e-0b18b9388df4.webp", alt: "Bridal makeup" },
 ];
 
 export default function GalleryPage() {
