@@ -37,7 +37,7 @@ export default function Navbar() {
       aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3" aria-label="Deepa Bridal Studio - Home">
-          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-10 sm:h-12 md:h-14 w-auto" loading="eager" />
+          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-12 sm:h-14 md:h-16 w-auto" loading="eager" />
         </a>
         <ul className="hidden lg:flex items-center gap-4 xl:gap-5" role="list">
           {navLinks.map(link=>(
