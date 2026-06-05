@@ -7,11 +7,6 @@ import { Camera, ArrowRight } from "lucide-react";
 const previewPosts = [
   { id: 3, img: "/insta3.webp", alt: "Bridal hairstyle and makeup", tag: "Famous Playback Singer Mangli" },
   { id: 6, img: "/ananyanagalla.webp", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
-  { id: 17, img: "/airbrush5.webp", alt: "Airbrush makeup look" },
-  { id: 14, img: "/airbrush2.webp", alt: "Airbrush makeup look" },
-  { id: 13, img: "/airbrush1.webp", alt: "Airbrush makeup look" },
-  { id: 16, img: "/airbrush4.webp", alt: "Airbrush makeup look" },
-  { id: 11, img: "/hd4.webp", alt: "HD Bridal makeup look" },
   { id: 1, img: "/insta1.webp", alt: "Bridal makeup transformation" },
 ];
 
