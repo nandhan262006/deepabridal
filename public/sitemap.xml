@@ -3,19 +3,25 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://deepabridalstudio.com/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://deepabridal.in/</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://deepabridalstudio.com/LOGO.png</image:loc>
+      <image:loc>https://deepabridal.in/LOGO.webp</image:loc>
       <image:title>Deepa Bridal Studio - Bridal Makeup Artist in Nellore</image:title>
       <image:caption>Deepa Bridal Studio - Luxury Bridal Makeup in Nellore</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://deepabridalstudio.com/hero.jpeg</image:loc>
+      <image:loc>https://deepabridal.in/hero.webp</image:loc>
       <image:title>Bridal Makeup by Deepa Bridal Studio Nellore</image:title>
       <image:caption>Professional bridal makeup artist in Nellore</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://deepabridal.in/gallery</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

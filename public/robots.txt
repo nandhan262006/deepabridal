@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deepabridalstudio.com/sitemap.xml
+Sitemap: https://deepabridal.in/sitemap.xml
