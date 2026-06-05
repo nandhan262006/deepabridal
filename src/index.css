@@ -150,3 +150,73 @@ h1, h2, h3, h4 { overflow-wrap: break-word; }
 
 /* min touch target */
 .touch-target { min-height: 44px; min-width: 44px; }
+
+/* ── Brands Marquee ── */
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent 1%, black 6%, black 94%, transparent 99%);
+  -webkit-mask-image: linear-gradient(to right, transparent 1%, black 6%, black 94%, transparent 99%);
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-holder {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  animation: marquee-scroll 50s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brand-card {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.brand-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(212, 160, 23, 0.25),
+              0 0 50px rgba(212, 160, 23, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee-track:hover { animation-play-state: running; }
+}
+
+/* ── Gold Shimmer Heading ── */
+.gold-shimmer {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #d4a017 0%, #f5d87a 30%, #d4a017 50%, #f5d87a 70%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 250% 100%;
+  animation: gold-shimmer-move 4s ease-in-out infinite;
+  -webkit-text-stroke: 0.5px transparent;
+  padding: 0.15em 0;
+}
+
+@keyframes gold-shimmer-move {
+  0%, 100% { background-position: 0% 0; }
+  50%      { background-position: 100% 0; }
+}
+
+@media (max-width: 767px) {
+  .brand-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
