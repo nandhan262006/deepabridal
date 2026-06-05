@@ -4,9 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award, Trophy } from "lucide-react";
 
 const trainingPhotos = [
-  { src: "/train.jpeg", label: "b3bridal studio karthika shyam" },
-  { src: "/train2.jpeg", label: "International Makeup Artist Suji" },
-  { src: "/train3.jpeg", label: "International Saree Drapist Thivyan Jayareuben" },
+  { src: "/train.webp", label: "b3bridal studio karthika shyam" },
+  { src: "/train2.webp", label: "International Makeup Artist Suji" },
+  { src: "/train3.webp", label: "International Saree Drapist Thivyan Jayareuben" },
 ];
 
 const workExperiencePhotos = [
