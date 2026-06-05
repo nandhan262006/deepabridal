@@ -34,7 +34,8 @@ export default function Hero() {
         </motion.div>
 
         <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}}
-          transition={{duration:1,delay:0.4,type:"spring",stiffness:80}}>
+          transition={{duration:1,delay:0.4,type:"spring",stiffness:80}}
+          className="-mb-2 sm:-mb-3">
           <img src="/LOGO.webp" alt="Deepa Bridal Studio - Luxury Bridal Makeup Artist in Nellore"
             width="500" height="500" className="h-40 sm:h-52 lg:h-64 w-auto mx-auto" loading="eager" />
         </motion.div>
