@@ -11,7 +11,7 @@ const trainingPhotos = [
 
 const workExperiencePhotos = [
   { src: "/greentends.webp", label: "Green Trends" },
-  { src: "/javedhabib.webp", label: "Javed Habib" },
+  { src: "/javedhabib.webp", label: "Javed Habib", fit: "object-contain" },
   { src: "/naturals.webp", label: "Naturals" },
   { src: "/page3.webp", label: "Face3" },
 ];
@@ -44,7 +44,7 @@ function Slider({ photos, label, icon: Icon, inView }) {
             alt={`${label} photo ${current + 1}`}
             initial={{opacity:0,scale:1.1}} animate={{opacity:1,scale:1}} exit={{opacity:0}}
             transition={{duration:0.4}}
-            className="w-full h-full object-cover absolute inset-0" loading="lazy" />
+            className={`w-full h-full ${photos[current].fit || 'object-cover'} absolute inset-0`} loading="lazy" />
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 right-0 p-3 m-2 z-10" style={{backgroundColor:'rgba(6,15,9,0.85)'}}>
