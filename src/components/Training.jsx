@@ -9,10 +9,10 @@ const trainingPhotos = [
   { src: "/train3.jpeg", label: "International Saree Drapist Thivyan Jayareuben" },
 ];
 
-const achievementPhotos = [
-  { src: "/ach1.webp", label: "Achievement 1" },
-  { src: "/ach2.webp", label: "Achievement 2" },
-  { src: "/ach3.webp", label: "Achievement 3" },
+const workExperiencePhotos = [
+  { src: "/work1.webp", label: "Work Experience 1" },
+  { src: "/work2.webp", label: "Work Experience 2" },
+  { src: "/work3.webp", label: "Work Experience 3" },
 ];
 
 function Slider({ photos, label, icon: Icon, inView }) {
@@ -80,7 +80,7 @@ export default function Training() {
       aria-label="Training and achievements - Deepa Bridal Studio Nellore">
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-12">
-          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-2">Professional Training & Achievements</p>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-2">Professional Training & Work Experience</p>
           <h2 className="font-display text-5xl md:text-6xl gold-text mb-2">Trained by Professionals</h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-yellow-700" />
@@ -94,7 +94,7 @@ export default function Training() {
             <Slider photos={trainingPhotos} label="training" icon={Award} inView={inView} />
           </motion.div>
           <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8}}>
-            <Slider photos={achievementPhotos} label="achievements" icon={Trophy} inView={inView} />
+            <Slider photos={workExperiencePhotos} label="work experience" icon={Trophy} inView={inView} />
           </motion.div>
         </div>
       </div>
