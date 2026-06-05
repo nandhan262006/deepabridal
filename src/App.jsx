@@ -18,10 +18,10 @@ function HomePage() {
     <>
       <Hero />
       <About />
-      <Training />
       <Services />
       <BridalServices />
       <Gallery />
+      <Training />
       <Testimonials />
       <Contact />
     </>
