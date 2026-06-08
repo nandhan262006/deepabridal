@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Camera, X } from "lucide-react";
 
@@ -23,8 +24,21 @@ const allPhotos = [
 export default function GalleryPage() {
   const [lightbox, setLightbox] = useState(null);
 
+
+
   return (
-    <div className="min-h-screen deepa-bg-flat">
+    <>
+      <Helmet>
+        <title>Bridal Makeup Gallery | Deepa Bridal Studio - Nellore</title>
+        <meta name="description" content="Explore our bridal makeup gallery in Nellore. See HD makeup, airbrush makeup, celebrity looks and bridal transformations by Deepa Bridal Studio." />
+        <link rel="canonical" href="https://deepabridal.in/gallery" />
+        <meta property="og:title" content="Bridal Makeup Gallery | Deepa Bridal Studio - Nellore" />
+        <meta property="og:url" content="https://deepabridal.in/gallery" />
+        <meta property="og:image" content="https://deepabridal.in/insta3.webp" />
+        <meta name="twitter:title" content="Bridal Makeup Gallery | Deepa Bridal Studio - Nellore" />
+        <meta name="twitter:image" content="https://deepabridal.in/insta3.webp" />
+      </Helmet>
+      <div className="min-h-screen deepa-bg-flat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-32">
         <div className="text-center mb-12">
           <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Our Work</p>
@@ -69,5 +83,6 @@ export default function GalleryPage() {
         </div>
       )}
     </div>
+    </>
   );
 }

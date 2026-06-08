@@ -16,7 +16,7 @@ const workExperiencePhotos = [
   { src: "/page3.webp", label: "Face3" },
 ];
 
-function Slider({ photos, label, icon: Icon, inView }) {
+function Slider({ photos, label, icon: Icon }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
