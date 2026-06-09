@@ -34,10 +34,14 @@ export default function GalleryPage() {
         img: p.image ? urlFor(p.image).width(800).height(800).url() : fallbackPhotos[0].img,
         alt: p.title || "Gallery image",
         tag: null,
+        order: p.order ?? 999,
       }))
     : [];
 
-  const photos = [...sanityPhotos, ...fallbackPhotos];
+  const fallbackWithOrder = fallbackPhotos.map((p, i) => ({...p, order: 100 + i}));
+
+  const photos = [...sanityPhotos, ...fallbackWithOrder]
+    .sort((a, b) => a.order - b.order);
 
   return (
     <>

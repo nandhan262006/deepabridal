@@ -19,14 +19,19 @@ export default function InstagramGallery() {
   const { data: galleryImages } = useSanity(galleryQuery);
 
   const sanityPosts = galleryImages && galleryImages.length > 0
-    ? galleryImages.slice(0, 3).map(p => ({
+    ? galleryImages.map(p => ({
         img: p.image ? urlFor(p.image).width(600).height(600).url() : fallbackPosts[0].img,
         alt: p.title || "Gallery image",
         tag: p.category || null,
+        order: p.order ?? 999,
       }))
     : [];
 
-  const posts = [...sanityPosts, ...fallbackPosts].slice(0, 3);
+  const fallbackWithOrder = fallbackPosts.map((p, i) => ({...p, order: 100 + i}));
+
+  const posts = [...sanityPosts, ...fallbackWithOrder]
+    .sort((a, b) => a.order - b.order)
+    .slice(0, 3);
 
   return (
     <section id="gallery" className="deepa-bg-flat section-padding relative overflow-hidden">
