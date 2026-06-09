@@ -1,7 +1,7 @@
 import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
-const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || 'YOUR_PROJECT_ID'
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || 'woupzwa5'
 const dataset = import.meta.env.VITE_SANITY_DATASET || 'production'
 
 export const client = createClient({

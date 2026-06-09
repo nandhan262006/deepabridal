@@ -2,13 +2,15 @@
   "name": "studio",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "sanity dev -p 3333",
     "build": "sanity build",
     "deploy": "sanity deploy"
   },
   "dependencies": {
-    "sanity": "^3.80.0",
-    "@sanity/vision": "^3.80.0"
+    "@sanity/vision": "^5.30.0",
+    "sanity": "^5.30.0",
+    "styled-components": "^6.4.2"
   }
 }

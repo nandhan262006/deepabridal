@@ -1,12 +1,12 @@
-import about from './about'
-import bridalPackage from './bridalPackage'
-import service from './service'
-import testimonial from './testimonial'
-import galleryImage from './galleryImage'
-import brand from './brand'
-import faq from './faq'
-import training from './training'
-import siteSettings from './siteSettings'
+import about from './about.js'
+import bridalPackage from './bridalPackage.js'
+import service from './service.js'
+import testimonial from './testimonial.js'
+import galleryImage from './galleryImage.js'
+import brand from './brand.js'
+import faq from './faq.js'
+import training from './training.js'
+import siteSettings from './siteSettings.js'
 
 export const schemaTypes = [
   about,
