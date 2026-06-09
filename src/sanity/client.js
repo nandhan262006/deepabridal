@@ -7,7 +7,7 @@ const dataset = import.meta.env.VITE_SANITY_DATASET || 'production'
 export const client = createClient({
   projectId,
   dataset,
-  useCdn: true,
+  useCdn: false,
   apiVersion: '2024-01-01',
 })
 
