@@ -18,13 +18,15 @@ export default function InstagramGallery() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const { data: galleryImages } = useSanity(galleryQuery);
 
-  const posts = galleryImages && galleryImages.length > 0
+  const sanityPosts = galleryImages && galleryImages.length > 0
     ? galleryImages.slice(0, 3).map(p => ({
         img: p.image ? urlFor(p.image).width(600).height(600).url() : fallbackPosts[0].img,
         alt: p.title || "Gallery image",
         tag: p.category || null,
       }))
-    : fallbackPosts;
+    : [];
+
+  const posts = [...sanityPosts, ...fallbackPosts].slice(0, 3);
 
   return (
     <section id="gallery" className="deepa-bg-flat section-padding relative overflow-hidden">

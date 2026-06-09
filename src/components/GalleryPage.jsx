@@ -28,14 +28,16 @@ export default function GalleryPage() {
   const [lightbox, setLightbox] = useState(null);
   const { data: galleryImages } = useSanity(galleryQuery);
 
-  const photos = galleryImages && galleryImages.length > 0
+  const sanityPhotos = galleryImages && galleryImages.length > 0
     ? galleryImages.map((p, i) => ({
-        id: i,
-        img: p.image ? urlFor(p.image).width(800).height(800).url() : fallbackPhotos[i % fallbackPhotos.length].img,
+        id: `sanity-${i}`,
+        img: p.image ? urlFor(p.image).width(800).height(800).url() : fallbackPhotos[0].img,
         alt: p.title || "Gallery image",
         tag: null,
       }))
-    : fallbackPhotos;
+    : [];
+
+  const photos = [...sanityPhotos, ...fallbackPhotos];
 
   return (
     <>
