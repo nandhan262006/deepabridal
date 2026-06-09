@@ -9,6 +9,17 @@ export default {
       type: 'string',
     },
     {
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      description: 'Main logo (used in Navbar, Hero, Footer)',
+    },
+    {
+      name: 'instagramLogo',
+      title: 'Instagram Logo',
+      type: 'image',
+    },
+    {
       name: 'heroHeading',
       title: 'Hero Heading',
       type: 'string',

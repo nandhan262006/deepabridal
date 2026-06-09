@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Sparkles } from "lucide-react";
+import { useSiteSettings } from "../sanity/SiteSettingsProvider";
+import { urlFor } from "../sanity/client";
 
 export default function Hero() {
+  const settings = useSiteSettings();
+  const logoSrc = settings?.logo ? urlFor(settings.logo).width(500).url() : "/LOGO.webp";
   return (
     <section id="home"
       className="deepa-bg relative min-h-[60vh] sm:min-h-[85vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden"
@@ -36,18 +40,18 @@ export default function Hero() {
         <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}}
           transition={{duration:1,delay:0.4,type:"spring",stiffness:80}}
           className="-mb-2 sm:-mb-3">
-          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Luxury Bridal Makeup Artist in Nellore"
+          <img src={logoSrc} alt="Deepa Bridal Studio - Luxury Bridal Makeup Artist in Nellore"
             width="500" height="500" className="h-40 sm:h-52 lg:h-64 w-auto mx-auto" loading="eager" />
         </motion.div>
 
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.9,delay:0.6}}
           className="font-display hero-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-[0.02em] sm:tracking-[0.08em] uppercase gold-text">
-          Deepa Bridal Studio
+          {settings?.heroHeading || "Deepa Bridal Studio"}
         </motion.h1>
 
         <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:0.8}}
           className="font-sans text-xs sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.6em] uppercase text-yellow-400/75">
-          Best Bridal Makeup Studio in Nellore
+          {settings?.heroSubheading || "Best Bridal Makeup Studio in Nellore"}
         </motion.p>
 
         <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:1.0}}

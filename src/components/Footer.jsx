@@ -1,5 +1,10 @@
+import { useSiteSettings } from "../sanity/SiteSettingsProvider";
+import { urlFor } from "../sanity/client";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const settings = useSiteSettings();
+  const logoSrc = settings?.logo ? urlFor(settings.logo).width(200).url() : "/LOGO.webp";
   return (
     <footer style={{backgroundColor:'#000000',borderTop:'1px solid rgba(212,160,23,0.2)'}}
       aria-label="Deepa Bridal Studio footer - Bridal Makeup Artist in Nellore">
@@ -9,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/LOGO.webp" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-10 w-auto" loading="lazy" />
+              <img src={logoSrc} alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-10 w-auto" loading="lazy" />
             </div>
             <p className="font-body text-base text-yellow-300/60 leading-relaxed mb-4">
               Signature bridal artistry for the modern Indian bride. Every look crafted with precision, love, and expertise.

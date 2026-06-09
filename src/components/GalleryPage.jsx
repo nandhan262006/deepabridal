@@ -2,8 +2,11 @@ import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Camera, X } from "lucide-react";
+import { useSanity } from "../sanity/useSanity";
+import { galleryQuery } from "../sanity/queries";
+import { urlFor } from "../sanity/client";
 
-const allPhotos = [
+const fallbackPhotos = [
   { id: 3, img: "/insta3.webp", alt: "Bridal hairstyle and makeup", tag: "Famous Playback Singer Mangli" },
   { id: 6, img: "/ananyanagalla.webp", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
   { id: 17, img: "/airbrush5.webp", alt: "Airbrush makeup look 5" },
@@ -23,8 +26,16 @@ const allPhotos = [
 
 export default function GalleryPage() {
   const [lightbox, setLightbox] = useState(null);
+  const { data: galleryImages } = useSanity(galleryQuery);
 
-
+  const photos = galleryImages && galleryImages.length > 0
+    ? galleryImages.map((p, i) => ({
+        id: i,
+        img: p.image ? urlFor(p.image).width(800).height(800).url() : fallbackPhotos[i % fallbackPhotos.length].img,
+        alt: p.title || "Gallery image",
+        tag: null,
+      }))
+    : fallbackPhotos;
 
   return (
     <>
@@ -34,9 +45,9 @@ export default function GalleryPage() {
         <link rel="canonical" href="https://deepabridal.in/gallery" />
         <meta property="og:title" content="Bridal Makeup Gallery | Deepa Bridal Studio - Nellore" />
         <meta property="og:url" content="https://deepabridal.in/gallery" />
-        <meta property="og:image" content="https://deepabridal.in/insta3.webp" />
+        <meta property="og:image" content={photos[0]?.img || "https://deepabridal.in/insta3.webp"} />
         <meta name="twitter:title" content="Bridal Makeup Gallery | Deepa Bridal Studio - Nellore" />
-        <meta name="twitter:image" content="https://deepabridal.in/insta3.webp" />
+        <meta name="twitter:image" content={photos[0]?.img || "https://deepabridal.in/insta3.webp"} />
       </Helmet>
       <div className="min-h-screen deepa-bg-flat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-32">
@@ -52,7 +63,7 @@ export default function GalleryPage() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-          {allPhotos.map((photo, i) => (
+          {photos.map((photo, i) => (
             <motion.button key={photo.id}
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -61,11 +72,6 @@ export default function GalleryPage() {
               className="relative group overflow-hidden border border-yellow-900/25 hover:border-yellow-600/45 transition-all duration-500 aspect-square bg-forest-800">
               <img src={photo.img} alt={photo.alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-              {photo.tag && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-3">
-                  <p className="font-display text-base gold-text leading-tight">{photo.tag}</p>
-                </div>
-              )}
             </motion.button>
           ))}
         </div>

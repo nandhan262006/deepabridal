@@ -1,23 +1,26 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useSanity } from "../sanity/useSanity";
+import { brandsQuery } from "../sanity/queries";
+import { urlFor } from "../sanity/client";
 
-const brands = [
+const fallbackBrands = [
   { name: "MAC", initials: "MAC", color: "#000000", textColor: "#ffffff" },
-  { name: "NARS", initials: "NARS", color: "#1a1a1a", textColor: "#ffffff", image: "/nars-logo-png_seeklogo-320780.png" },
-  { name: "Makeup Studio", initials: "MS", color: "#0d0d0d", textColor: "#d4af37", image: "/MAKEUPSTUDio.png" },
-  { name: "Seasoul Australia", initials: "SS", color: "#003d3d", textColor: "#b8e6e6", image: "/seasoul.webp" },
-  { name: "Sephora", initials: "S", color: "#000000", textColor: "#ffffff", image: "/sephora.png" },
-  { name: "Smashbox", initials: "SB", color: "#242424", textColor: "#d4af37", image: "/SMASHBOX.png" },
-  { name: "Kylie", initials: "K", color: "#3a1a1a", textColor: "#ff85a2", image: "/KYLiE.jpg" },
-  { name: "Urban Decay", initials: "UD", color: "#1a1a2e", textColor: "#b388ff", image: "/URBANDECAY.png" },
-  { name: "Rare Beauty", initials: "RB", color: "#0d0d0d", textColor: "#d4af37", image: "/Rare_beauty.webp" },
-  { name: "Benefit", initials: "B", color: "#301a1a", textColor: "#ff69b4", image: "/Benefit_Cosmetics_logo.png" },
-  { name: "Fenty Beauty", initials: "FB", color: "#000000", textColor: "#ffffff", image: "/fentybeauty.png" },
-  { name: "Estée Lauder", initials: "EL", color: "#002060", textColor: "#d4af37", image: "/estee-lauder-logo-png_seeklogo-49534.png" },
-  { name: "Schwarzkopf", initials: "SC", color: "#000000", textColor: "#d4af37", image: "/schwarzkopf.png" },
-  { name: "Dyson", initials: "D", color: "#1a1a1a", textColor: "#b87333", image: "/Dyson-logo.png" },
-  { name: "Ikonic Professional", initials: "IK", color: "#0d0d0d", textColor: "#d4af37", image: "/ikonic.jpg" },
+  { name: "NARS", initials: "NARS", color: "#1a1a1a", textColor: "#ffffff" },
+  { name: "Makeup Studio", initials: "MS", color: "#0d0d0d", textColor: "#d4af37" },
+  { name: "Seasoul Australia", initials: "SS", color: "#003d3d", textColor: "#b8e6e6" },
+  { name: "Sephora", initials: "S", color: "#000000", textColor: "#ffffff" },
+  { name: "Smashbox", initials: "SB", color: "#242424", textColor: "#d4af37" },
+  { name: "Kylie", initials: "K", color: "#3a1a1a", textColor: "#ff85a2" },
+  { name: "Urban Decay", initials: "UD", color: "#1a1a2e", textColor: "#b388ff" },
+  { name: "Rare Beauty", initials: "RB", color: "#0d0d0d", textColor: "#d4af37" },
+  { name: "Benefit", initials: "B", color: "#301a1a", textColor: "#ff69b4" },
+  { name: "Fenty Beauty", initials: "FB", color: "#000000", textColor: "#ffffff" },
+  { name: "Est\u00e9e Lauder", initials: "EL", color: "#002060", textColor: "#d4af37" },
+  { name: "Schwarzkopf", initials: "SC", color: "#000000", textColor: "#d4af37" },
+  { name: "Dyson", initials: "D", color: "#1a1a1a", textColor: "#b87333" },
+  { name: "Ikonic Professional", initials: "IK", color: "#0d0d0d", textColor: "#d4af37" },
 ];
 
 function BrandSlide({ items }) {
@@ -29,7 +32,7 @@ function BrandSlide({ items }) {
           className="brand-card group flex-shrink-0 w-[100px] sm:w-[120px] md:w-[140px]"
         >
            <div className="border border-yellow-800/40 hover:border-yellow-600/70 transition-all duration-500 ease-out p-2 sm:p-3 md:p-4 h-full flex flex-col items-center"
-            style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
+             style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
               <div className="w-full aspect-square mb-1 sm:mb-2 flex items-center justify-center overflow-hidden relative"
                style={{ backgroundColor: brand.image ? '#ffffff' : brand.color }}>
                 {brand.image ? (
@@ -58,7 +61,7 @@ function BrandSlide({ items }) {
   );
 }
 
-function MarqueeTrack() {
+function MarqueeTrack({ brands }) {
   return (
     <div className="marquee-track flex gap-3 sm:gap-4 md:gap-5 w-max">
       <BrandSlide items={brands} />
@@ -70,6 +73,17 @@ function MarqueeTrack() {
 export default function Brands() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { data: sanityBrands } = useSanity(brandsQuery);
+
+  const brands = sanityBrands && sanityBrands.length > 0
+    ? sanityBrands.map(b => ({
+        name: b.name,
+        image: b.logo ? urlFor(b.logo).width(140).url() : null,
+        initials: b.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase(),
+        color: '#ffffff',
+        textColor: '#d4af37',
+      }))
+    : fallbackBrands;
 
   return (
     <section id="brands" className="section-padding relative overflow-hidden"
@@ -111,12 +125,10 @@ export default function Brands() {
         >
           <div className="marquee-container relative">
             <div className="marquee-holder">
-              <MarqueeTrack />
+              <MarqueeTrack brands={brands} />
             </div>
           </div>
         </motion.div>
-
-
       </div>
     </section>
   );

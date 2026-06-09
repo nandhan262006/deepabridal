@@ -2,14 +2,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award, Trophy } from "lucide-react";
+import { useSanity } from "../sanity/useSanity";
+import { trainingQuery } from "../sanity/queries";
+import { urlFor } from "../sanity/client";
 
-const trainingPhotos = [
+const fallbackTraining = [
   { src: "/train.webp", label: "b3bridal studio karthika shyam" },
   { src: "/train2.webp", label: "International Makeup Artist Suji" },
   { src: "/train3.webp", label: "International Saree Drapist Thivyan Jayareuben" },
 ];
 
-const workExperiencePhotos = [
+const fallbackWork = [
   { src: "/greentends.webp", label: "Green Trends" },
   { src: "/javedhabib.webp", label: "Javed Habib", fit: "object-contain" },
   { src: "/naturals.webp", label: "Naturals" },
@@ -28,6 +31,8 @@ function Slider({ photos, label, icon: Icon }) {
 
   const prev = () => setCurrent(c => (c === 0 ? photos.length - 1 : c - 1));
   const next = () => setCurrent(c => (c === photos.length - 1 ? 0 : c + 1));
+
+  if (photos.length === 0) return null;
 
   return (
     <div className="relative max-w-md mx-auto w-full">
@@ -75,6 +80,21 @@ function Slider({ photos, label, icon: Icon }) {
 export default function Training() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { data: trainingData } = useSanity(trainingQuery);
+
+  const trainingPhotos = trainingData && trainingData.length > 0
+    ? trainingData.filter(t => t.category !== 'brand').map(t => ({
+        src: t.image ? urlFor(t.image).width(600).height(800).url() : fallbackTraining[0].src,
+        label: t.title || 'Training',
+      }))
+    : fallbackTraining;
+
+  const workPhotos = trainingData && trainingData.length > 0
+    ? trainingData.filter(t => t.category === 'brand').map(t => ({
+        src: t.image ? urlFor(t.image).width(600).height(800).url() : fallbackWork[0].src,
+        label: t.title || 'Work Experience',
+      }))
+    : fallbackWork;
 
   return (
     <section id="training" className="deepa-bg section-padding relative overflow-hidden"
@@ -95,7 +115,7 @@ export default function Training() {
             <Slider photos={trainingPhotos} label="training" icon={Award} inView={inView} />
           </motion.div>
           <motion.div initial={{opacity:0,x:50}} animate={inView?{opacity:1,x:0}:{}} transition={{duration:0.8}}>
-            <Slider photos={workExperiencePhotos} label="work experience" icon={Trophy} inView={inView} />
+            <Slider photos={workPhotos} label="work experience" icon={Trophy} inView={inView} />
           </motion.div>
         </div>
       </div>

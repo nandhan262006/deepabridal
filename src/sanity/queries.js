@@ -47,6 +47,8 @@ export const faqsQuery = `*[_type == "faq"] | order(order asc){
 
 export const siteSettingsQuery = `*[_type == "siteSettings"][0]{
   title,
+  logo,
+  instagramLogo,
   heroHeading,
   heroSubheading,
   heroDescription,
@@ -55,4 +57,11 @@ export const siteSettingsQuery = `*[_type == "siteSettings"][0]{
   bridalSectionTagline,
   bridalSectionIntro,
   aboutSectionTitle
+}`
+
+export const trainingQuery = `*[_type == "training"] | order(order asc){
+  title,
+  image,
+  category,
+  order
 }`

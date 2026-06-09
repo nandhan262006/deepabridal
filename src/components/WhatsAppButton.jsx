@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Phone } from "lucide-react";
+import { useSiteSettings } from "../sanity/SiteSettingsProvider";
+import { urlFor } from "../sanity/client";
 
 const waLink = "https://wa.me/917993393339?text=Hi%20Deepa%20Bridal%20Studio!%20I'd%20like%20to%20book%20a%20bridal%20makeup%20consultation.";
 const igLink = "https://instagram.com/deepabridalstudio";
 
 export default function WhatsAppButton() {
+  const settings = useSiteSettings();
+  const instaLogoSrc = settings?.instagramLogo ? urlFor(settings.instagramLogo).width(60).url() : "/instalogo.webp";
   return (
     <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
       <motion.a
@@ -19,7 +23,7 @@ export default function WhatsAppButton() {
         style={{background:'linear-gradient(135deg,#833ab4,#fd1d1d,#f56040)'}}
         aria-label="Follow Deepa Bridal Studio on Instagram"
       >
-        <img src="/instalogo.webp" alt="Instagram - Deepa Bridal Studio Nellore" className="w-5 sm:w-7 h-5 sm:h-7 rounded-full" />
+        <img src={instaLogoSrc} alt="Instagram - Deepa Bridal Studio Nellore" className="w-5 sm:w-7 h-5 sm:h-7 rounded-full" />
       </motion.a>
       <motion.a
         href={waLink}

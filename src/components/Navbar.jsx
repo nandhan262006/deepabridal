@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSiteSettings } from "../sanity/SiteSettingsProvider";
+import { urlFor } from "../sanity/client";
 
 const navLinks = [
   { name: "Home", href: "#home", external: false },
@@ -15,6 +17,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const settings = useSiteSettings();
+  const logoSrc = settings?.logo ? urlFor(settings.logo).width(200).url() : "/LOGO.webp";
 
   useEffect(()=>{
     const fn = ()=>setScrolled(window.scrollY>50);
@@ -37,7 +41,7 @@ export default function Navbar() {
       aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3" aria-label="Deepa Bridal Studio - Home">
-          <img src="/LOGO.webp" alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-12 sm:h-14 md:h-16 w-auto" loading="eager" />
+          <img src={logoSrc} alt="Deepa Bridal Studio - Best Bridal Makeup Artist in Nellore" width="500" height="500" className="h-12 sm:h-14 md:h-16 w-auto" loading="eager" />
         </a>
         <ul className="hidden lg:flex items-center gap-4 xl:gap-5" role="list">
           {navLinks.map(link=>(

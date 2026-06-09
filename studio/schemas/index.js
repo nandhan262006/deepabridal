@@ -5,6 +5,7 @@ import testimonial from './testimonial'
 import galleryImage from './galleryImage'
 import brand from './brand'
 import faq from './faq'
+import training from './training'
 import siteSettings from './siteSettings'
 
 export const schemaTypes = [
@@ -15,5 +16,6 @@ export const schemaTypes = [
   galleryImage,
   brand,
   faq,
+  training,
   siteSettings,
 ]

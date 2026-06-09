@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SiteSettingsProvider } from "./sanity/SiteSettingsProvider";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -42,15 +43,17 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-        </Routes>
-      </main>
-      <Footer />
-      <WhatsAppButton />
+      <SiteSettingsProvider>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </SiteSettingsProvider>
     </BrowserRouter>
   );
 }

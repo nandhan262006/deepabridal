@@ -3,16 +3,28 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Camera, ArrowRight } from "lucide-react";
+import { useSanity } from "../sanity/useSanity";
+import { galleryQuery } from "../sanity/queries";
+import { urlFor } from "../sanity/client";
 
-const previewPosts = [
-  { id: 3, img: "/insta3.webp", alt: "Bridal hairstyle and makeup", tag: "Famous Playback Singer Mangli" },
-  { id: 6, img: "/ananyanagalla.webp", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
-  { id: 1, img: "/insta1.webp", alt: "Bridal makeup transformation" },
+const fallbackPosts = [
+  { img: "/insta3.webp", alt: "Bridal hairstyle and makeup", tag: "Famous Playback Singer Mangli" },
+  { img: "/ananyanagalla.webp", alt: "Actress Ananya Nagalla", tag: "Actress Ananya Nagalla" },
+  { img: "/insta1.webp", alt: "Bridal makeup transformation" },
 ];
 
 export default function InstagramGallery() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { data: galleryImages } = useSanity(galleryQuery);
+
+  const posts = galleryImages && galleryImages.length > 0
+    ? galleryImages.slice(0, 3).map(p => ({
+        img: p.image ? urlFor(p.image).width(600).height(600).url() : fallbackPosts[0].img,
+        alt: p.title || "Gallery image",
+        tag: p.category || null,
+      }))
+    : fallbackPosts;
 
   return (
     <section id="gallery" className="deepa-bg-flat section-padding relative overflow-hidden">
@@ -29,8 +41,8 @@ export default function InstagramGallery() {
           </a>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {previewPosts.map((post, i) => (
-            <motion.div key={post.id}
+          {posts.map((post, i) => (
+            <motion.div key={i}
               initial={{ opacity: 0, scale: 0.92 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.55, delay: i * 0.06 }}
