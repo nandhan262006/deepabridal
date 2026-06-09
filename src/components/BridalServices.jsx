@@ -1,20 +1,17 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Sparkles } from "lucide-react";
+
 
 const bridalPackages = [
-  { title: "Basic Bridal Makeup Nellore", 
-    desc: "Classic bridal look with high-quality products. Perfect for intimate ceremonies and traditional functions at your wedding in Nellore.",
-    features: ["Matte/Glossy Finish", "Long-Lasting Formula", "Bridal Trials Included", "Touch-up Kit"],
+  { title: "Timeless Elegance", subtitle: "Basic Makeup",
+    desc: "Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look.",
     img: "/basica.webp" },
-  { title: "HD Bridal Makeup Nellore",
-    desc: "Flawless HD finish designed for high-definition photography. Airbrushed perfection for your big day. The best HD bridal makeup in Nellore.",
-    features: ["HD Foundation & Setting", "Camera-Ready Finish", "Water-Resistant", "Complimentary Trial"],
+  { title: "Picture-Perfect Glow", subtitle: "HD Makeup",
+    desc: "Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration.",
     img: "/hd6.webp" },
-  { title: "Airbrush Makeup Nellore",
-    desc: "Ultra-lightweight airbrush application for a second-skin finish. Transfer-proof, sweat-proof, and weightless. Premium airbrush makeup artist in Nellore.",
-    features: ["4K Resolution Finish", "Transfer-Proof Formula", "Buildable Coverage", "Lasts 16+ Hours"],
+  { title: "Airbrush Perfection", subtitle: "Airbrush Makeup",
+    desc: "Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day.",
     img: "/airbrush2.webp" },
 ];
 
@@ -50,17 +47,9 @@ function BridalPackageCard({ pkg, index }) {
       <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
         <div className="mb-3">
           <h3 className="font-display text-3xl gold-text">{pkg.title}</h3>
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-yellow-600/75 mt-1">Bridal Package</p>
+          <p className="font-sans text-sm tracking-[0.3em] uppercase text-yellow-400/80 mt-1">{pkg.subtitle}</p>
         </div>
-        <div className="divider-gold mb-4 opacity-25" />
-        <ul className="space-y-2 mt-auto">
-          {pkg.features.map(f=>(
-            <li key={f} className="flex items-center gap-3">
-              <Sparkles size={10} className="text-yellow-500 flex-shrink-0" />
-              <span className="font-sans text-sm tracking-[0.08em] text-yellow-300/85">{f}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="font-body text-base sm:text-lg text-white/90 leading-relaxed">{pkg.desc}</p>
       </div>
     </motion.div>
   );
@@ -74,13 +63,10 @@ export default function BridalServices() {
       aria-label="Bridal makeup packages in Nellore - Deepa Bridal Studio">
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
         <motion.div initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
-          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Choose Your Package</p>
-          <h2 className="font-display text-5xl md:text-6xl gold-text mb-5">Bridal Packages in Nellore</h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-700" />
-            <span className="font-sans text-2xl text-yellow-400/60">your perfect look awaits</span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-700" />
-          </div>
+          <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Deepa Brides Studio</p>
+          <h2 className="font-display text-4xl md:text-5xl gold-text mb-3">Bespoke Bridal Makeup Packages</h2>
+          <p className="font-display text-xl md:text-2xl text-yellow-300/80 italic mb-5">&ldquo;Transforming Dreams into Timeless Beauty&rdquo;</p>
+          <p className="font-body text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">At Deepa Brides Studio, once you walk in, no matter the occasion, we surpass your expectations, delivering a result beyond what you imagined — always within your budget.</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {bridalPackages.map((p,i)=><BridalPackageCard key={p.title} pkg={p} index={i}/>)}
