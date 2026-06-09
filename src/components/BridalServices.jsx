@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useSanity } from "../sanity/useSanity";
+import { bridalPackagesQuery, siteSettingsQuery } from "../sanity/queries";
+import { urlFor } from "../sanity/client";
 
-
-const bridalPackages = [
+const defaultPackages = [
   { title: "Timeless Elegance", subtitle: "Basic Makeup",
-    desc: "Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look.",
-    img: "/basica.webp" },
+    description: "Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look." },
   { title: "Picture-Perfect Glow", subtitle: "HD Makeup",
-    desc: "Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration.",
-    img: "/hd6.webp" },
+    description: "Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration." },
   { title: "Airbrush Perfection", subtitle: "Airbrush Makeup",
-    desc: "Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day.",
-    img: "/airbrush2.webp" },
+    description: "Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day." },
 ];
+
+const defaultImgs = ["/basica.webp", "/hd6.webp", "/airbrush2.webp"];
 
 function BridalImage({ src, title }) {
   return (
@@ -49,7 +50,7 @@ function BridalPackageCard({ pkg, index }) {
           <h3 className="font-display text-3xl gold-text">{pkg.title}</h3>
           <p className="font-sans text-sm tracking-[0.3em] uppercase text-yellow-400/80 mt-1">{pkg.subtitle}</p>
         </div>
-        <p className="font-body text-base sm:text-lg text-white/90 leading-relaxed">{pkg.desc}</p>
+        <p className="font-body text-base sm:text-lg text-white/90 leading-relaxed">{pkg.description}</p>
       </div>
     </motion.div>
   );
@@ -58,18 +59,29 @@ function BridalPackageCard({ pkg, index }) {
 export default function BridalServices() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { data: packages } = useSanity(bridalPackagesQuery);
+  const { data: settings } = useSanity(siteSettingsQuery);
+
+  const pkgList = packages && packages.length > 0 ? packages : defaultPackages;
+  const heading = settings?.bridalSectionHeading || "Bespoke Bridal Makeup Packages";
+  const tagline = settings?.bridalSectionTagline || "\u201cTransforming Dreams into Timeless Beauty\u201d";
+  const intro = settings?.bridalSectionIntro || "At Deepa Brides Studio, once you walk in, no matter the occasion, we surpass your expectations, delivering a result beyond what you imagined \u2014 always within your budget.";
+
   return (
     <section id="bridal-services" className="deepa-bg section-padding relative overflow-hidden"
       aria-label="Bridal makeup packages in Nellore - Deepa Bridal Studio">
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
         <motion.div initial={{opacity:0,y:30}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.8}} className="text-center mb-14">
           <p className="font-sans text-xs tracking-[0.6em] uppercase text-yellow-600/75 mb-4">Deepa Brides Studio</p>
-          <h2 className="font-display text-4xl md:text-5xl gold-text mb-3">Bespoke Bridal Makeup Packages</h2>
-          <p className="font-display text-xl md:text-2xl text-yellow-300/80 italic mb-5">&ldquo;Transforming Dreams into Timeless Beauty&rdquo;</p>
-          <p className="font-body text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">At Deepa Brides Studio, once you walk in, no matter the occasion, we surpass your expectations, delivering a result beyond what you imagined — always within your budget.</p>
+          <h2 className="font-display text-4xl md:text-5xl gold-text mb-3">{heading}</h2>
+          <p className="font-display text-xl md:text-2xl text-yellow-300/80 italic mb-5">&ldquo;{tagline.replace(/["""]/g, '')}&rdquo;</p>
+          <p className="font-body text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">{intro}</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {bridalPackages.map((p,i)=><BridalPackageCard key={p.title} pkg={p} index={i}/>)}
+          {pkgList.map((p,i)=>{
+            const img = p.image ? urlFor(p.image).width(600).height(600).url() : defaultImgs[i]
+            return <BridalPackageCard key={p.title} pkg={{...p, img}} index={i}/>
+          })}
         </div>
       </div>
     </section>
