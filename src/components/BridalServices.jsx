@@ -6,15 +6,16 @@ import { bridalPackagesQuery, siteSettingsQuery } from "../sanity/queries";
 import { urlFor } from "../sanity/client";
 
 const defaultPackages = [
-  { title: "Timeless Elegance", subtitle: "Basic Makeup",
+  { packageType: "basic", title: "Timeless Elegance", subtitle: "Basic Makeup",
     description: "Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look." },
-  { title: "Picture-Perfect Glow", subtitle: "HD Makeup",
+  { packageType: "hd", title: "Picture-Perfect Glow", subtitle: "HD Makeup",
     description: "Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration." },
-  { title: "Airbrush Perfection", subtitle: "Airbrush Makeup",
+  { packageType: "airbrush", title: "Airbrush Perfection", subtitle: "Airbrush Makeup",
     description: "Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day." },
 ];
 
-const defaultImgs = ["/basic.webp", "/hd6.webp", "/airbrush2.webp"];
+const typeImgs = { basic: "/basic.webp", hd: "/hdbridal.webp", airbrush: "/airbrush2.webp" };
+const typeLabels = { basic: "Basic Makeup", hd: "HD Makeup", airbrush: "Airbrush Makeup" };
 
 function BridalImage({ src, title }) {
   return (
@@ -79,8 +80,9 @@ export default function BridalServices() {
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {pkgList.map((p,i)=>{
-            const img = p.image ? urlFor(p.image).width(600).height(600).url() : defaultImgs[i]
-            return <BridalPackageCard key={p.title} pkg={{...p, img}} index={i}/>
+            const type = p.packageType || (i === 0 ? 'basic' : i === 1 ? 'hd' : 'airbrush')
+            const img = p.image ? urlFor(p.image).width(600).height(600).url() : typeImgs[type]
+            return <BridalPackageCard key={p.title || type} pkg={{...p, img, subtitle: p.subtitle || typeLabels[type]}} index={i}/>
           })}
         </div>
       </div>
