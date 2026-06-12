@@ -5,7 +5,7 @@ import { Scissors, Sparkles, Star, Gem } from "lucide-react";
 
 const services = [
   { icon: Scissors, title: "Hair Services", subtitle: "Style & Care" },
-  { icon: Star, title: "Skin Care Studio", subtitle: "Glow & Radiance" },
+  { icon: Star, title: "Skin Care", subtitle: "Glow & Radiance" },
   { icon: Sparkles, title: "Bridal Makeup", subtitle: "Artistry & Elegance" },
   { icon: Gem, title: "Nail Studio", subtitle: "Details & Design" },
 ];
