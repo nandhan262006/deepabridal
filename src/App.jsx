@@ -8,6 +8,7 @@ import Training from "./components/Training";
 import Services from "./components/Services";
 import BridalServices from "./components/BridalServices";
 import Gallery from "./components/Gallery";
+import Bridesmaid from "./components/Bridesmaid";
 import Testimonials from "./components/Testimonials";
 import Brands from "./components/Brands";
 
@@ -31,6 +32,7 @@ function HomePage() {
       <About />
       <Services />
       <BridalServices />
+      <Bridesmaid />
       <Gallery />
       <Training />
       <Testimonials />
