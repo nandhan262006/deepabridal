@@ -60,7 +60,7 @@ export default function About() {
             <div className="relative mx-auto max-w-xs sm:max-w-sm">
               <div className="absolute -inset-2 sm:-inset-3 border border-yellow-700/20" />
               <div className="absolute -inset-4 sm:-inset-6 border border-yellow-800/10" />
-              <div className="w-full aspect-[3/4] border border-yellow-700/30 overflow-hidden flex items-center justify-center relative"
+              <div className="w-full aspect-[3/4] border border-yellow-700/30 overflow-hidden flex items-center justify-center relative group"
                 style={{
                   backgroundColor:'#0e2a1a',
                   backgroundImage:`linear-gradient(45deg,rgba(255,255,255,0.022) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,0.022) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(255,255,255,0.022) 75%),linear-gradient(-45deg,transparent 75%,rgba(255,255,255,0.022) 75%)`,
@@ -72,6 +72,9 @@ export default function About() {
                   <img src="/hero1.webp" alt="Deepa - Professional Bridal Makeup Artist at Deepa Bridal Studio in Nellore" className="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" width="800" height="1067" />
                 )}
                 <div className="absolute inset-0 z-20" style={{background:'radial-gradient(ellipse 70% 65% at 50% 35%,rgba(26,79,52,0.15) 0%,rgba(3,10,6,0.55) 100%)'}} />
+                <div className="absolute bottom-0 left-0 z-30 bg-black/70 px-4 py-2 border-t border-r border-yellow-700/40 rounded-tr-lg">
+                  <span className="font-display text-sm md:text-base text-yellow-300/90 tracking-wider">Signature Bridal Artistry by Deepa</span>
+                </div>
               </div>
             </div>
           </motion.div>

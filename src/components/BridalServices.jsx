@@ -14,7 +14,7 @@ const defaultPackages = [
     description: "Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day." },
 ];
 
-const defaultImgs = ["/basica.webp", "/hd6.webp", "/airbrush2.webp"];
+const defaultImgs = ["/basic.webp", "/hd6.webp", "/airbrush2.webp"];
 
 function BridalImage({ src, title }) {
   return (
