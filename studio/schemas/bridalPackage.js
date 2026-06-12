@@ -4,50 +4,49 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'packageType',
-      title: 'Package Type',
-      type: 'string',
-      description: 'Select which package this is',
+      name: 'order',
+      title: 'Package',
+      type: 'number',
+      description: '1 = Basic Makeup, 2 = HD Makeup, 3 = Airbrush Makeup',
       options: {
         list: [
-          {title: 'Basic Makeup', value: 'basic'},
-          {title: 'HD Makeup', value: 'hd'},
-          {title: 'Airbrush Makeup', value: 'airbrush'},
+          {title: '1 - Basic Makeup', value: 1},
+          {title: '2 - HD Makeup', value: 2},
+          {title: '3 - Airbrush Makeup', value: 3},
         ],
-        layout: 'radio',
       },
-      validation: (Rule) => Rule.required(),
+      readOnly: true,
     },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'Package name (e.g. "Timeless Elegance")',
-      hidden: ({document}) => !document?.packageType,
+      readOnly: true,
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+      readOnly: true,
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'Detailed description of what the package includes',
-      rows: 4,
-      hidden: ({document}) => !document?.packageType,
+      readOnly: true,
     },
     {
       name: 'features',
       title: 'Features',
       type: 'array',
-      description: 'List of key features included in this package',
       of: [{type: 'string'}],
-      hidden: ({document}) => !document?.packageType,
+      readOnly: true,
     },
     {
       name: 'image',
-      title: 'Image',
+      title: 'Photo (click to replace)',
       type: 'image',
-      description: 'Upload a photo showcasing this package',
       options: {hotspot: true},
-      hidden: ({document}) => !document?.packageType,
     },
   ],
   orderings: [
@@ -59,15 +58,15 @@ export default {
   ],
   preview: {
     select: {
-      title: 'packageType',
-      subtitle: 'title',
+      order: 'order',
+      title: 'title',
       media: 'image',
     },
-    prepare({title, subtitle, media}) {
-      const labels = {basic: 'Basic Makeup', hd: 'HD Makeup', airbrush: 'Airbrush Makeup'};
+    prepare({order, title, media}) {
+      const labels = {1: 'Basic Makeup', 2: 'HD Makeup', 3: 'Airbrush Makeup'};
       return {
-        title: labels[title] || title,
-        subtitle: subtitle || 'No title set',
+        title: labels[order] || `Package ${order}`,
+        subtitle: title,
         media,
       };
     },
